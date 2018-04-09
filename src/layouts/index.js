@@ -36,6 +36,7 @@ class Layout extends React.Component {
         style={{
           margin: '0 auto',
           maxWidth: 680,
+          WebkitFontSmoothing: 'antialiased'
         }}
       >
         {this.props.children()}

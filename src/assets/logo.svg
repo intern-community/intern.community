@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="50px" viewBox="0 0 36 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28,0 L36,0 L36,0 C36,6.07513225 31.0751322,11 25,11 L17,11 L17,11 C17,4.92486775 21.9248678,1.11598369e-15 28,0 Z" id="path-1"></path>
+        <path d="M1.77635684e-15,11 L8,11 C14.0751322,11 19,15.9248678 19,22 L11,22 C4.92486775,22 2.52034597e-15,17.0751322 1.77635684e-15,11 Z" id="path-2"></path>
+    </defs>
+    <g id="Artboard-Copy-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <path d="M13.0294373,55 C22.4020203,55 30,47.3888407 30,38 C30,28.6111593 22.4020203,21 13.0294373,21 C3.65685425,21 3.65685425,55 13.0294373,55 Z" id="Oval-Copy-9" fill="#C1CAFF" transform="translate(18.000000, 38.000000) rotate(-270.000000) translate(-18.000000, -38.000000) "></path>
+            <rect id="Rectangle-3" stroke="#412B4F" stroke-width="1.27536234" x="17.6376812" y="11.6376812" width="1" height="21.7246377"></rect>
+            <g id="Rectangle-4-Copy-15">
+                <use fill="#D7CEFE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#412B4F" stroke-width="2.31884061" d="M18.2270029,9.84057969 L25,9.84057969 C30.042545,9.84057969 34.1992449,6.04782571 34.7729971,1.15942031 L28,1.15942031 C22.957455,1.15942031 18.8007551,4.95217429 18.2270029,9.84057969 Z"></path>
+            </g>
+            <g id="Rectangle-4-Copy-15">
+                <use fill="#EEEBFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <path stroke="#412B4F" stroke-width="2.31884061" d="M1.22700294,12.1594203 C1.80075509,17.0478257 5.95745497,20.8405797 11,20.8405797 L17.7729971,20.8405797 C17.1992449,15.9521743 13.042545,12.1594203 8,12.1594203 L1.22700294,12.1594203 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>
