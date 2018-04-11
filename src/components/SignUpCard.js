@@ -5,7 +5,7 @@ import { lighten, darken, desaturate, transparentize } from 'polished'
 import { Formik, Form, Field } from 'formik'
 import Yup from 'yup'
 import axios from 'axios'
-import { StyledLink, ArrowLink, ArrowButton } from './Links'
+import { StyledAnchor, StyledLink, ArrowLink, ArrowButton } from './Links'
 
 const Card = styled.div`
   box-sizing: border-box;
@@ -143,6 +143,11 @@ const SignUpInputContainer = styled.div`
   position: relative;
 `
 
+const FormResponse = styled.p`
+  margin: 1rem 0 auto;
+  color: ${props => props.theme.main};
+`
+
 const Loader = styled.div`
   display: inline-flex;
   align-items: center;
@@ -187,8 +192,6 @@ const SignUp = props => (
       school: Yup.string(),
     })}
     onSubmit={values => {
-      console.log(values)
-      console.log(props.id)
       axios.post("https://intern-community-invite.herokuapp.com/invite", {
         id: props.id,
         email: values.email,
@@ -196,10 +199,10 @@ const SignUp = props => (
         company: values.company,
         school: values.school
       }).then(response => {
-        console.log(response);
-        navigateTo({pathname: "/"+props.id, state: { context: response.data } })
+        console.log(response.data)
+        props.formResponse(response.data);
+        //navigateTo({pathname: "/"+props.id, state: { context: response.data } })
       })
-      //navigateTo(props.id)
     }}
     render={({ values, errors, touched, isSubmitting }) => (
       <SignUpForm>
@@ -267,6 +270,10 @@ const SignUp = props => (
 class SignUpCard extends Component {
   state = {
     open: false,
+    response: false,
+  }
+  handleResponse = (msg) => {
+    this.setState({response: msg})
   }
   render() {
     return (
@@ -282,10 +289,20 @@ class SignUpCard extends Component {
               <Moon />
               <Landmark landmark={this.props.theme.landmark} />
             </div>
-          ) : (
-            <SignUp
+          ) : 
+          this.state.response === 'ok' ? (
+            <FormResponse><strong>Success! 💯</strong><br/>Check your email for the invite.</FormResponse>
+          ) : 
+          this.state.response === 'existing' ? (
+            <FormResponse><strong>You've already been invited! 🕶</strong><br/>Visit <StyledAnchor href={'https://'+this.props.theme.url}>{this.props.theme.url}</StyledAnchor> to get your account set up!</FormResponse>
+          ) : 
+          this.state.response ? (
+            <FormResponse>{this.state.response}</FormResponse>
+          ) :
+          ( <SignUp
               city={this.props.theme.city}
               id={this.props.theme.id}
+              formResponse={this.handleResponse}
             />
           )}
           {!this.state.open && (

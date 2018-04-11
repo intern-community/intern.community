@@ -56,19 +56,22 @@ const IndexPage = () => (
         main: '#f55353',
         landmark: sfbridge,
         city: 'SF/Bay Area',
-        id: 'sf'
+        id: 'sf',
+        url: 'sfbayinterns2018.slack.com'
       }} />
       <SignUpCard theme={{
         main: '#6279F2',
         landmark: nycbuilding,
         city: 'New York City',
-        id: 'nyc'
+        id: 'nyc',
+        url: 'nycinterns2018.slack.com'
       }} />
       <SignUpCard theme={{
         main: '#bd62f2',
         landmark: '',
         city: 'Seattle',
-        id: 'sea'
+        id: 'sea',
+        url: 'seattleinterns2018.slack.com'
       }} />
     </SignUpContainer>
   </div>

@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import Link from 'gatsby-link';
 import { lighten, desaturate } from 'polished';
 
+const defaultTheme = {
+  theme: {
+    main: '#777777'
+  }
+}
+
 export const StyledLink = styled(Link)`
   z-index: 2;
   border: none;
@@ -24,13 +30,10 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-StyledLink.defaultProps = {
-  theme: {
-    main: '#777777'
-  }
-}
+StyledLink.defaultProps = defaultTheme;
 
 export const StyledButton = StyledLink.withComponent('button');
+export const StyledAnchor = StyledLink.withComponent('a');
 
 export const ArrowLink = StyledLink.extend`
   position: relative;
@@ -48,3 +51,4 @@ export const ArrowLink = StyledLink.extend`
 `;
 
 export const ArrowButton = ArrowLink.withComponent('button');
+export const ArrowAnchor = StyledLink.withComponent('a');
