@@ -1,9 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import styled, { injectGlobal } from 'styled-components'
+import media from '../utils/media'
 
 import Header from '../components/Header'
 import '../assets/fonts.css'
+
+const Container = styled.div`
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.2em;
+  ${media.desktop`
+    font-size: 1em;
+  `}
+  ${media.tablet`
+    font-size: .9em;
+  `};
+`;
+
+const Wrapper = styled.main`
+  margin: 0 auto;
+  max-width: 1000px;
+  ${media.desktop`
+    margin: 0 auto;
+    max-width: 680px;
+  `};
+  ${media.tablet`
+    max-width: 85%;
+  `};
+  ${media.phone`
+    max-width: 90%;
+  `};
+
+`;
 
 class Layout extends React.Component {
   render() {
@@ -13,7 +42,7 @@ class Layout extends React.Component {
     const isNYC = this.props.location.pathname.split('/')[1] === 'nyc'
 
     return (
-      <div>
+      <Container>
       <Helmet
         defaultTitle="Intern Community"
         titleTemplate="%s | Intern Community"
@@ -30,18 +59,21 @@ class Layout extends React.Component {
           isNYC={isNYC}
         />
       )}
-      <main
-        style={{
-          margin: '0 auto',
-          maxWidth: 680,
-          WebkitFontSmoothing: 'antialiased'
-        }}
-      >
+      <Wrapper>
         {this.props.children()}
-      </main>
-    </div>
+      </Wrapper>
+    </Container>
     );
   }
 }
 
 export default Layout;
+
+injectGlobal`
+  ${media.phone`
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 1.2rem;
+    }
+  `}
+`

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Link, { navigateTo } from 'gatsby-link'
-import styled, { ThemeProvider, keyframes } from 'styled-components'
+import styled, { ThemeProvider, keyframes, css } from 'styled-components'
 import { lighten, darken, desaturate, transparentize } from 'polished'
 import { Formik, Form, Field } from 'formik'
 import Yup from 'yup'
 import axios from 'axios'
 import { StyledAnchor, StyledLink, ArrowLink, ArrowButton } from './Links'
+import media from '../utils/media'
 
 const Card = styled.div`
   box-sizing: border-box;
@@ -23,10 +24,13 @@ const Card = styled.div`
   /* box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.13), 0 9px 22px rgba(0, 0, 0, 0.11), */
   border-radius: 6px;
   transform: scale(0.9);
+  ${media.tablet`
+    width: 115%;
+  `}
 `
 
 const CardSubtitle = styled.div`
-  color: ${props => darken(0.1, desaturate(0.35, props.theme.main))};
+  color: ${props => darken(0.3, desaturate(0.35, props.theme.main))};
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.9em;
