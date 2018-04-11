@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
-import './c.css'
-
+import '../assets/fonts.css'
 
 class Layout extends React.Component {
   render() {
@@ -12,7 +11,6 @@ class Layout extends React.Component {
     const isSF = this.props.location.pathname.split('/')[1] === 'sf'
     const isSEA = this.props.location.pathname.split('/')[1] === 'seattle'
     const isNYC = this.props.location.pathname.split('/')[1] === 'nyc'
-    console.log(isLanding)
 
     return (
       <div>
