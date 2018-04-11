@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import styled, { ThemeProvider } from 'styled-components'
-import { lighten, darken, desaturate } from 'polished'
-import { StyledLink, ArrowLink, ArrowButton } from './Links'
+import Link, { navigateTo } from 'gatsby-link'
+import styled, { ThemeProvider, keyframes } from 'styled-components'
+import { lighten, darken, desaturate, transparentize } from 'polished'
 import { Formik, Form, Field } from 'formik'
 import Yup from 'yup'
+import axios from 'axios'
+import { StyledLink, ArrowLink, ArrowButton } from './Links'
 
 const Card = styled.div`
   box-sizing: border-box;
@@ -39,11 +40,16 @@ const CardTitle = styled.h1`
 const Cover = styled.div`
   position: absolute;
   width: 100%;
-  height: 18%;
+  height: ${props => (props.theme.id === 'sf' && '19%') ||
+              (props.theme.id === 'nyc' && '41%') ||
+              (props.theme.id === 'sea' && '19%')};
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(0, white, 91%, rgba(255, 255, 255, 0));
+  background: linear-gradient(0, white,
+    ${props => (props.theme.id === 'sf' && '91%') ||
+              (props.theme.id === 'nyc' && '81%') ||
+              (props.theme.id === 'sea' && '91%')}, rgba(255, 255, 255, 0));
   border-radius: 6px;
 `
 
@@ -51,8 +57,12 @@ const Moon = styled.div`
   width: 330px;
   height: 330px;
   position: absolute;
-  right: -155px;
-  top: 120px;
+  right: ${props => (props.theme.id === 'sf' && '-155px') ||
+              (props.theme.id === 'nyc' && '205px') ||
+              (props.theme.id === 'sea' && '255px')};
+  top: ${props => (props.theme.id === 'sf' && '120px') ||
+              (props.theme.id === 'nyc' && '160px') ||
+              (props.theme.id === 'sea' && '115px')};
   background: linear-gradient(
     180deg,
     ${props => props.theme.main + ', ' + lighten(0.3, props.theme.main)}
@@ -66,15 +76,21 @@ const Landmark = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 184px;
-  left: 0;
+  top:  ${props => (props.theme.id === 'sf' && '184px') ||
+              (props.theme.id === 'nyc' && '132px') ||
+              (props.theme.id === 'sea' && '184px')};
+  left:  ${props => (props.theme.id === 'sf' && '0') ||
+              (props.theme.id === 'nyc' && '120px') ||
+              (props.theme.id === 'sea' && '0')};
   /* transform: translate(-10px, 50px); */
-  background: url(${props => props.landmark});
+  background: no-repeat url(${props => props.landmark});
+  
 `
 
 const SignUpForm = styled(Form)`
   display: flex;
   flex-direction: column;
+  position: relative;
   margin: 0;
 `
 
@@ -127,6 +143,33 @@ const SignUpInputContainer = styled.div`
   position: relative;
 `
 
+const Loader = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  &:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid ${props => desaturate(.5, props.theme.main)};
+    border-color: ${props => desaturate(.5, props.theme.main) + ' transparent ' + desaturate(.5, props.theme.main) + ' ' + desaturate(.5, props.theme.main)};
+    animation: ${
+      keyframes`
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }`} 1.2s linear infinite;
+  }
+`;
+
 const SignUp = props => (
   <Formik
     initialValues={{
@@ -145,7 +188,18 @@ const SignUp = props => (
     })}
     onSubmit={values => {
       console.log(values)
-      console.log(props.city)
+      console.log(props.id)
+      axios.post("https://intern-community-invite.herokuapp.com/invite", {
+        id: props.id,
+        email: values.email,
+        name: values.name,
+        company: values.company,
+        school: values.school
+      }).then(response => {
+        console.log(response);
+        navigateTo({pathname: "/"+props.id, state: { context: response.data } })
+      })
+      //navigateTo(props.id)
     }}
     render={({ values, errors, touched, isSubmitting }) => (
       <SignUpForm>
@@ -201,7 +255,10 @@ const SignUp = props => (
           {touched.school &&
             errors.school && <SignUpError>{errors.school}</SignUpError>}
         </SignUpInputContainer>
-        <ArrowButton disabled={isSubmitting}>Join the Community</ArrowButton>
+        <div style={{alignSelf: 'flex-end'}}>
+          {isSubmitting && <Loader />}
+          <ArrowButton disabled={isSubmitting}>Join the Community</ArrowButton>
+        </div>
       </SignUpForm>
     )}
   />
@@ -226,10 +283,14 @@ class SignUpCard extends Component {
               <Landmark landmark={this.props.theme.landmark} />
             </div>
           ) : (
-            <SignUp city={this.props.theme.city} />
+            <SignUp
+              city={this.props.theme.city}
+              id={this.props.theme.id}
+            />
           )}
           {!this.state.open && (
             <ArrowButton
+              style={{alignSelf: 'flex-end'}}
               onClick={() => this.state.open || this.setState({ open: true })}
             >
               Join the Community

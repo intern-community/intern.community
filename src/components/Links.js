@@ -8,7 +8,6 @@ export const StyledLink = styled(Link)`
   background: none;
   padding: 0;
   text-decoration: none;
-  align-self: flex-end;
   color: ${props => props.theme.main};
   box-shadow: inset 0 -2px 0 ${props => lighten(0.25, props.theme.main)};/*rgba(245,83,83,0.3)*/
   transition: all 0.5s ease;
@@ -49,5 +48,3 @@ export const ArrowLink = StyledLink.extend`
 `;
 
 export const ArrowButton = ArrowLink.withComponent('button');
-
-

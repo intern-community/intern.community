@@ -1,10 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import Link, {navigateTo} from 'gatsby-link'
 import styled from 'styled-components'
 import SignUpCard from '../components/SignUpCard'
 import sfbridge from '../assets/sfbridge.svg'
+import nycbuilding from '../assets/nycbuilding.svg'
 import logo from '../assets/logo.svg'
-import { StyledLink, ArrowButton } from '../components/Links'
+import { StyledLink, StyledButton, ArrowButton } from '../components/Links'
 
 const TextHero = styled.div`
   text-align: ${props => props.centered && 'center'};
@@ -33,7 +34,7 @@ const LogoWrap = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform: lowercase;
+  text-transform: lowercase; 
   > div {
     margin-right: 20px;
   }
@@ -44,7 +45,7 @@ const IndexPage = () => (
     <TextHero centered>
       <LogoWrap><Logo/>Intern Community</LogoWrap>
       <p>
-        We’re a community of designers, developers, product managers, data
+        We’re a community of designers, developers, product managers, data 
         engineers, digital marketers—interns. We hold monthly Q&A’s throughout
         the summer, and help to provide any resources needed to be your one-stop
         guide for the best summer internship experience!
@@ -54,17 +55,20 @@ const IndexPage = () => (
       <SignUpCard theme={{
         main: '#f55353',
         landmark: sfbridge,
-        city: 'SF/Bay Area'
+        city: 'SF/Bay Area',
+        id: 'sf'
       }} />
       <SignUpCard theme={{
         main: '#6279F2',
-        landmark: sfbridge,
-        city: 'New York City'
+        landmark: nycbuilding,
+        city: 'New York City',
+        id: 'nyc'
       }} />
       <SignUpCard theme={{
         main: '#bd62f2',
-        landmark: sfbridge,
-        city: 'Seattle'
+        landmark: '',
+        city: 'Seattle',
+        id: 'sea'
       }} />
     </SignUpContainer>
   </div>
