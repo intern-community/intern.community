@@ -45,15 +45,15 @@ const Cover = styled.div`
   position: absolute;
   width: 100%;
   height: ${props => (props.theme.id === 'sf' && '19%') ||
-              (props.theme.id === 'nyc' && '41%') ||
-              (props.theme.id === 'sea' && '19%')};
+              (props.theme.id === 'nyc' && '31%') ||
+              (props.theme.id === 'sea' && '31%')};
   bottom: 0;
   left: 0;
   z-index: 2;
   background: linear-gradient(0, white,
     ${props => (props.theme.id === 'sf' && '91%') ||
               (props.theme.id === 'nyc' && '81%') ||
-              (props.theme.id === 'sea' && '91%')}, rgba(255, 255, 255, 0));
+              (props.theme.id === 'sea' && '79%')}, rgba(255, 255, 255, 0));
   border-radius: 6px;
 `
 
@@ -61,12 +61,8 @@ const Moon = styled.div`
   width: 330px;
   height: 330px;
   position: absolute;
-  right: ${props => (props.theme.id === 'sf' && '-155px') ||
-              (props.theme.id === 'nyc' && '205px') ||
-              (props.theme.id === 'sea' && '255px')};
-  top: ${props => (props.theme.id === 'sf' && '120px') ||
-              (props.theme.id === 'nyc' && '160px') ||
-              (props.theme.id === 'sea' && '115px')};
+  left: -155px;
+  top: 140px;
   background: linear-gradient(
     180deg,
     ${props => props.theme.main + ', ' + lighten(0.3, props.theme.main)}
@@ -80,15 +76,15 @@ const Landmark = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  top:  ${props => (props.theme.id === 'sf' && '184px') ||
-              (props.theme.id === 'nyc' && '132px') ||
-              (props.theme.id === 'sea' && '184px')};
+  top:  ${props => (props.theme.id === 'sf' && '186px') ||
+              (props.theme.id === 'nyc' && '128px') ||
+              (props.theme.id === 'sea' && '104px')};
   left:  ${props => (props.theme.id === 'sf' && '0') ||
               (props.theme.id === 'nyc' && '120px') ||
-              (props.theme.id === 'sea' && '0')};
+              (props.theme.id === 'sea' && '114px')};
   /* transform: translate(-10px, 50px); */
   background: no-repeat url(${props => props.landmark});
-  
+  background-position-x: ${props => (props.theme.id === 'sf' && '-22px')}
 `
 
 const SignUpForm = styled(Form)`

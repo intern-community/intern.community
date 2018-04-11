@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="430px" height="306px" viewBox="0 0 430 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="826px" height="299px" viewBox="0 0 826 299" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
-    <title>sfbridge</title>
+    <title>gg-bridge-copy</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="54.7878284%" y1="50%" x2="25.7678529%" y2="50%" id="linearGradient-1">
@@ -9,33 +9,32 @@
             <stop stop-color="#FF6262" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
-            <stop stop-color="#F75757" offset="0%"></stop>
+            <stop stop-color="#D34949" offset="0%"></stop>
             <stop stop-color="#ED4646" offset="100%"></stop>
         </linearGradient>
-        <linearGradient x1="50%" y1="28.0285347%" x2="50%" y2="100%" id="linearGradient-3">
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#D34949" offset="0%"></stop>
+            <stop stop-color="#ED4646" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="28.0285347%" x2="50%" y2="100%" id="linearGradient-4">
             <stop stop-color="#EF4949" offset="0%"></stop>
             <stop stop-color="#F66565" offset="100%"></stop>
         </linearGradient>
-        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-4">
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-5">
             <stop stop-color="#FF6262" offset="0%"></stop>
             <stop stop-color="#EF4949" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="sfbridge" transform="translate(-113.000000, -32.000000)">
-            <g id="gg-bridge-copy" transform="translate(293.000000, 169.162512) scale(-1, 1) translate(-293.000000, -169.162512) translate(0.000000, 0.162512)">
-                <rect id="Rectangle-4-Copy" fill="#F66565" fill-rule="nonzero" transform="translate(281.177329, 306.163904) rotate(-90.000000) translate(-281.177329, -306.163904) " x="250.140172" y="297.870525" width="62.0743137" height="16.5867579"></rect>
-                <rect id="Rectangle-4-Copy-2" fill="#F66565" fill-rule="nonzero" transform="translate(356.356220, 306.163904) rotate(-90.000000) translate(-356.356220, -306.163904) " x="325.319063" y="297.870525" width="62.0743137" height="16.5867579"></rect>
-                <rect id="Rectangle-4" fill="url(#linearGradient-1)" fill-rule="nonzero" x="0" y="259.859206" width="585.037992" height="15.895643"></rect>
-                <path d="M356.356221,267.807028 C470.441418,267.807028 562.925743,175.134934 562.925743,60.8181122" id="Oval" stroke="url(#linearGradient-2)" stroke-width="15.865208" transform="translate(459.640982, 164.312570) scale(-1, 1) translate(-459.640982, -164.312570) "></path>
-                <path d="M281.17733,267.807028 C395.262527,267.807028 487.746852,175.134934 487.746852,60.8181122" id="Oval-Copy-2" stroke="url(#linearGradient-2)" stroke-width="15.865208" transform="translate(384.462091, 164.312570) scale(-1, 1) translate(-384.462091, -164.312570) "></path>
-                <rect id="Rectangle-2" fill="url(#linearGradient-3)" fill-rule="nonzero" x="272.900754" y="33.8646306" width="91.7320415" height="226.685691"></rect>
-                <rect id="Rectangle-3" fill="#FFFFFF" fill-rule="nonzero" x="289.453905" y="0" width="60.0051699" height="59.4358824" rx="8.27882447"></rect>
-                <rect id="Rectangle-3-Copy" fill="#FFFFFF" fill-rule="nonzero" x="289.453905" y="83.6249042" width="60.0051699" height="76.0226403" rx="8.27882447"></rect>
-                <rect id="Rectangle-3-Copy-2" fill="#FFFFFF" fill-rule="nonzero" x="289.453905" y="184.527681" width="60.0051699" height="76.0226403" rx="8.27882447"></rect>
-                <path d="M74.2629501,267.807028 C188.348147,267.807028 280.832472,175.134934 280.832472,60.8181122" id="Oval" stroke="url(#linearGradient-4)" stroke-width="15.865208"></path>
-                <path d="M149.441841,267.807028 C263.527038,267.807028 356.011363,175.134934 356.011363,60.8181122" id="Oval-Copy" stroke="url(#linearGradient-4)" stroke-width="15.865208"></path>
-            </g>
+        <g id="gg-bridge-copy">
+            <rect id="Rectangle-4-Copy" fill="#F66565" fill-rule="nonzero" transform="translate(276.686893, 268.344155) rotate(-90.000000) translate(-276.686893, -268.344155) " x="246.145403" y="260.187642" width="61.0829794" height="16.3130265"></rect>
+            <rect id="Rectangle-4-Copy-2" fill="#F66565" fill-rule="nonzero" transform="translate(350.665168, 268.344155) rotate(-90.000000) translate(-350.665168, -268.344155) " x="320.123678" y="260.187642" width="61.0829794" height="16.3130265"></rect>
+            <rect id="Rectangle-4" fill="url(#linearGradient-1)" fill-rule="nonzero" x="0" y="222.803624" width="826" height="15.633317"></rect>
+            <path d="M350.665169,230.620283 C462.928412,230.620283 553.935751,139.477557 553.935751,27.047307" id="Oval" stroke="url(#linearGradient-2)" stroke-width="15.6265959" transform="translate(452.300460, 128.833795) scale(-1, 1) translate(-452.300460, -128.833795) "></path>
+            <path d="M350.794542,230.620283 C399.846351,230.620283 444.840138,213.219976 479.957476,184.246443" id="Oval-Copy-2" stroke="url(#linearGradient-3)" stroke-width="15.6265959" transform="translate(415.376009, 207.433363) scale(-1, 1) translate(-415.376009, -207.433363) "></path>
+            <path d="M284.831291,0.538638959 L284.831291,17.5335768 C284.831291,22.0370786 288.482101,25.6878881 292.985603,25.6878881 L335.72386,25.6878881 C340.227362,25.6878881 343.878171,22.0370786 343.878171,17.5335768 L343.878171,0.538638959 L358.809566,0.538638959 L358.809566,223.483334 L268.542496,223.483334 L268.542496,0.538638959 L284.831291,0.538638959 Z M292.985603,49.4777182 C288.482101,49.4777182 284.831291,53.1285278 284.831291,57.6320295 L284.831291,116.091445 C284.831291,120.594947 288.482101,124.245756 292.985603,124.245756 L335.72386,124.245756 C340.227362,124.245756 343.878171,120.594947 343.878171,116.091445 L343.878171,57.6320295 C343.878171,53.1285278 340.227362,49.4777182 335.72386,49.4777182 L292.985603,49.4777182 Z M292.985603,148.715295 C288.482101,148.715295 284.831291,152.366105 284.831291,156.869607 L284.831291,215.329022 C284.831291,219.832524 288.482101,223.483333 292.985603,223.483333 L335.72386,223.483333 C340.227362,223.483333 343.878171,219.832524 343.878171,215.329022 L343.878171,156.869607 C343.878171,152.366105 340.227362,148.715295 335.72386,148.715295 L292.985603,148.715295 Z" id="Combined-Shape" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+            <path d="M73.0769618,230.620283 C185.340204,230.620283 276.347544,139.477557 276.347544,27.047307" id="Oval" stroke="url(#linearGradient-5)" stroke-width="15.6265959"></path>
+            <path d="M147.055237,230.620283 C259.318479,230.620283 350.325819,139.477557 350.325819,27.047307" id="Oval-Copy" stroke="url(#linearGradient-5)" stroke-width="15.6265959"></path>
         </g>
     </g>
 </svg>

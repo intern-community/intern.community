@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import SignUpCard from '../components/SignUpCard'
 import sfbridge from '../assets/sfbridge.svg'
 import nycbuilding from '../assets/nycbuilding.svg'
+import seaneedle from '../assets/seaneedle.svg'
 import faq from '../assets/faq.svg'
 import logo from '../assets/logo.svg'
 import media from '../utils/media'
@@ -91,8 +92,8 @@ const Faq = styled.div`
   `};
 `
 
-const IndexPage = () => (
-  <div>
+const IndexPage = ({ transition }) => (
+  <div style={transition && transition.style}>
     <TextHero centered>
       <LogoWrap>
         <Logo />Intern Community
@@ -125,8 +126,8 @@ const IndexPage = () => (
       />
       <SignUpCard
         theme={{
-          main: '#bd62f2',
-          landmark: '',
+          main: '#A762F2',
+          landmark: seaneedle,
           city: 'Seattle',
           id: 'sea',
           url: 'seattleinterns2018.slack.com',
@@ -162,7 +163,7 @@ const IndexPage = () => (
       <FaqArrow />
       <p>
         We compiled a small bit of experiences from past community members for
-        you right <StyledLink href="#">here</StyledLink>! We’d love to give you
+        you right <StyledLink to="/">here</StyledLink>! We’d love to give you
         this same experience.
       </p>
     </Faq>

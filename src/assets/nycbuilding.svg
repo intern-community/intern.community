@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="239px" height="364px" viewBox="0 0 239 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="243px" height="404px" viewBox="0 0 243 404" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
     <title>Group 2</title>
     <desc>Created with Sketch.</desc>
@@ -12,12 +12,12 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-3" points="71 120 113 120 113 164 62 164"></polygon>
+        <polygon id="path-3" points="73 120 115 120 115 164 64 164"></polygon>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="449.288431%" id="linearGradient-4">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-5" points="135 120 177 120 177 164 126 164"></polygon>
+        <polygon id="path-5" points="137 120 179 120 179 164 128 164"></polygon>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="148.347454%" id="linearGradient-6">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -26,7 +26,7 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <rect id="path-8" x="55" y="152" width="129" height="281"></rect>
+        <rect id="path-8" x="57" y="152" width="129" height="281"></rect>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="581.738106%" id="linearGradient-9">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -35,7 +35,7 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-11" points="82 92 157 92 157 131 82 131 82 93"></polygon>
+        <polygon id="path-11" points="84 92 159 92 159 131 84 131 84 93"></polygon>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="472.104749%" id="linearGradient-12">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -44,7 +44,7 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-14" points="106 45 134 45 139 103 101 103"></polygon>
+        <polygon id="path-14" points="108 45 136 45 141 103 103 103"></polygon>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="597.227542%" id="linearGradient-15">
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -57,8 +57,8 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-18" points="10 193 90 193 90 441 10 441"></polygon>
-        <polygon id="path-19" points="149 193 229 193 229 441 149 441"></polygon>
+        <polygon id="path-18" points="10 220 90 220 90 468 10 468"></polygon>
+        <polygon id="path-19" points="153 220 233 220 233 468 153 468"></polygon>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="51.7906336%" id="linearGradient-20">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -67,8 +67,8 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-22" points="0 283 100 283 100 531 0 531"></polygon>
-        <polygon id="path-23" points="139 283 239 283 239 531 139 531"></polygon>
+        <polygon id="path-22" points="0 310 100 310 100 558 0 558"></polygon>
+        <polygon id="path-23" points="143 310 243 310 243 558 143 558"></polygon>
         <linearGradient x1="50%" y1="0.480325313%" x2="50%" y2="191.043434%" id="linearGradient-24">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
@@ -77,65 +77,65 @@
             <stop stop-color="#6082EF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-26" points="102 121 138 121 138 241 102 241"></polygon>
+        <polygon id="path-26" points="104 121 140 121 140 241 104 241"></polygon>
         <linearGradient x1="50%" y1="-29.8687359%" x2="66.2828525%" y2="169.148984%" id="linearGradient-27">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#6565F6" offset="100%"></stop>
         </linearGradient>
-        <polygon id="path-28" points="32 233 68 233 68 423 32 423"></polygon>
-        <polygon id="path-29" points="172 233 208 233 208 423 172 423"></polygon>
+        <polygon id="path-28" points="32 260 68 260 68 450 32 450"></polygon>
+        <polygon id="path-29" points="175 260 211 260 211 450 175 450"></polygon>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-6-Copy" transform="translate(-134.000000, -31.000000)">
-            <g id="Group-2" transform="translate(134.000000, 31.000000)">
+        <g id="Group-6-Copy-2" transform="translate(-132.000000, -31.000000)">
+            <g id="Group-2" transform="translate(132.000000, 31.000000)">
                 <g id="Rectangle-7-Copy-7">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-3"></use>
-                    <path stroke="url(#linearGradient-2)" stroke-width="12" d="M75.4888779,125.5 L68.7388779,158.5 L107.5,158.5 L107.5,125.5 L75.4888779,125.5 Z"></path>
+                    <path stroke="url(#linearGradient-2)" stroke-width="12" d="M77.4888779,125.5 L70.7388779,158.5 L109.5,158.5 L109.5,125.5 L77.4888779,125.5 Z"></path>
                 </g>
-                <g id="Rectangle-7-Copy-8" transform="translate(151.500000, 142.000000) scale(-1, 1) translate(-151.500000, -142.000000) ">
+                <g id="Rectangle-7-Copy-8" transform="translate(153.500000, 142.000000) scale(-1, 1) translate(-153.500000, -142.000000) ">
                     <use fill="url(#linearGradient-4)" fill-rule="evenodd" xlink:href="#path-5"></use>
-                    <path stroke="url(#linearGradient-2)" stroke-width="12" d="M139.488878,125.5 L132.738878,158.5 L171.5,158.5 L171.5,125.5 L139.488878,125.5 Z"></path>
+                    <path stroke="url(#linearGradient-2)" stroke-width="12" d="M141.488878,125.5 L134.738878,158.5 L173.5,158.5 L173.5,125.5 L141.488878,125.5 Z"></path>
                 </g>
                 <g id="Combined-Shape-Copy-5">
                     <use fill="url(#linearGradient-6)" fill-rule="evenodd" xlink:href="#path-8"></use>
-                    <rect stroke="url(#linearGradient-7)" stroke-width="12" x="60.5" y="157.5" width="118" height="270"></rect>
+                    <rect stroke="url(#linearGradient-7)" stroke-width="12" x="62.5" y="157.5" width="118" height="270"></rect>
                 </g>
                 <g id="Rectangle-7-Copy-4">
                     <use fill="url(#linearGradient-9)" fill-rule="evenodd" xlink:href="#path-11"></use>
-                    <path stroke="url(#linearGradient-10)" stroke-width="12" d="M87.5,97.5 L87.5,125.5 L151.5,125.5 L151.5,97.5 L87.5,97.5 Z"></path>
+                    <path stroke="url(#linearGradient-10)" stroke-width="12" d="M89.5,97.5 L89.5,125.5 L153.5,125.5 L153.5,97.5 L89.5,97.5 Z"></path>
                 </g>
                 <g id="Rectangle-7-Copy-5">
                     <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-14"></use>
-                    <path stroke="url(#linearGradient-13)" stroke-width="12" d="M111.046261,50.5 L106.994537,97 L133.005463,97 L128.953739,50.5 L111.046261,50.5 Z"></path>
+                    <path stroke="url(#linearGradient-13)" stroke-width="12" d="M113.046261,50.5 L108.994537,97.5 L135.005463,97.5 L130.953739,50.5 L113.046261,50.5 Z"></path>
                 </g>
-                <rect id="Rectangle-7-Copy-6" fill="url(#linearGradient-15)" x="115" y="0" width="10" height="45"></rect>
+                <rect id="Rectangle-7-Copy-6" fill="url(#linearGradient-15)" x="117" y="0" width="10" height="45"></rect>
                 <g id="Combined-Shape-Copy-6">
                     <use fill="url(#linearGradient-16)" fill-rule="evenodd" xlink:href="#path-18"></use>
-                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M15.5,198.5 L15.5,435.5 L84.5,435.5 L84.5,198.5 L15.5,198.5 Z"></path>
+                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M15.5,225.5 L15.5,462.5 L84.5,462.5 L84.5,225.5 L15.5,225.5 Z"></path>
                 </g>
                 <g id="Combined-Shape-Copy-7">
                     <use fill="url(#linearGradient-16)" fill-rule="evenodd" xlink:href="#path-19"></use>
-                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M154.5,198.5 L154.5,435.5 L223.5,435.5 L223.5,198.5 L154.5,198.5 Z"></path>
+                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M158.5,225.5 L158.5,462.5 L227.5,462.5 L227.5,225.5 L158.5,225.5 Z"></path>
                 </g>
                 <g id="Combined-Shape-Copy-8">
                     <use fill="url(#linearGradient-20)" fill-rule="evenodd" xlink:href="#path-22"></use>
-                    <path stroke="url(#linearGradient-21)" stroke-width="12" d="M5.5,288.5 L5.5,525.5 L94.5,525.5 L94.5,288.5 L5.5,288.5 Z"></path>
+                    <path stroke="url(#linearGradient-21)" stroke-width="12" d="M5.5,315.5 L5.5,552.5 L94.5,552.5 L94.5,315.5 L5.5,315.5 Z"></path>
                 </g>
                 <g id="Combined-Shape-Copy-9">
                     <use fill="url(#linearGradient-20)" fill-rule="evenodd" xlink:href="#path-23"></use>
-                    <path stroke="url(#linearGradient-21)" stroke-width="12" d="M144.5,288.5 L144.5,525.5 L233.5,525.5 L233.5,288.5 L144.5,288.5 Z"></path>
+                    <path stroke="url(#linearGradient-21)" stroke-width="12" d="M148.5,315.5 L148.5,552.5 L237.5,552.5 L237.5,315.5 L148.5,315.5 Z"></path>
                 </g>
                 <g id="Rectangle-6-Copy-3">
                     <use fill="url(#linearGradient-24)" fill-rule="evenodd" xlink:href="#path-26"></use>
-                    <path stroke="url(#linearGradient-25)" stroke-width="12" d="M107.5,126.5 L107.5,235.5 L132.5,235.5 L132.5,126.5 L107.5,126.5 Z"></path>
+                    <path stroke="url(#linearGradient-25)" stroke-width="12" d="M109.5,126.5 L109.5,235.5 L134.5,235.5 L134.5,126.5 L109.5,126.5 Z"></path>
                 </g>
                 <g id="Rectangle-6-Copy-4">
                     <use fill="url(#linearGradient-27)" fill-rule="evenodd" xlink:href="#path-28"></use>
-                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M37.5,238.5 L37.5,417.5 L62.5,417.5 L62.5,238.5 L37.5,238.5 Z"></path>
+                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M37.5,265.5 L37.5,444.5 L62.5,444.5 L62.5,265.5 L37.5,265.5 Z"></path>
                 </g>
                 <g id="Rectangle-6-Copy-5">
                     <use fill="url(#linearGradient-27)" fill-rule="evenodd" xlink:href="#path-29"></use>
-                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M177.5,238.5 L177.5,417.5 L202.5,417.5 L202.5,238.5 L177.5,238.5 Z"></path>
+                    <path stroke="url(#linearGradient-17)" stroke-width="12" d="M180.5,265.5 L180.5,444.5 L205.5,444.5 L205.5,265.5 L180.5,265.5 Z"></path>
                 </g>
             </g>
         </g>
