@@ -7,8 +7,8 @@ const Image = styled.img`
   box-shadow: 0 5px 20px rgba(58,71,80,.2);
 `
 
-const NotFoundPage = () => (
-  <div>
+const NotFoundPage = ({ transition }) => (
+  <div style={transition && transition.style}>
     <TextHero centered>
       <h1>404 NOT FOUND</h1>
       <Image src="https://i.redd.it/ni7xbwxvdbh01.gif"/>
