@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import Link, { navigateTo } from 'gatsby-link'
-import styled, { ThemeProvider, keyframes, css } from 'styled-components'
+import styled, { injectGlobal, ThemeProvider, keyframes, css } from 'styled-components'
 import { lighten, darken, desaturate, transparentize } from 'polished'
 import { Formik, Form, Field } from 'formik'
 import Yup from 'yup'
 import axios from 'axios'
+import 'gsap/TweenMax'
+
+
 import { StyledAnchor, StyledLink, ArrowLink, ArrowButton } from './Links'
 import media from '../utils/media'
 
@@ -63,17 +66,15 @@ const Moon = styled.div`
   position: absolute;
   left: -155px;
   top: 140px;
-  background: linear-gradient(
-    180deg,
-    ${props => props.theme.main + ', ' + lighten(0.3, props.theme.main)}
-  );
-  opacity: 0.44;
+  background: linear-gradient(180deg, ${props => props.theme.main + ', ' + lighten(0.3, props.theme.main)});
+  opacity: 0;
   border-radius: 50%;
-  /* transform: translateY(250px); */
+  transform: translateY(250px);
 `
 
 const Landmark = styled.div`
   position: absolute;
+  opacity: 0;
   width: 100%;
   height: 100%;
   top:  ${props => (props.theme.id === 'sf' && '186px') ||
@@ -82,9 +83,9 @@ const Landmark = styled.div`
   left:  ${props => (props.theme.id === 'sf' && '0') ||
               (props.theme.id === 'nyc' && '120px') ||
               (props.theme.id === 'sea' && '114px')};
-  /* transform: translate(-10px, 50px); */
+  transform: translate(10px, 50px);
   background: no-repeat url(${props => props.landmark});
-  background-position-x: ${props => (props.theme.id === 'sf' && '-22px')}
+  background-position-x: ${props => (props.theme.id === 'sf' && '-22px')};
 `
 
 const SignUpForm = styled(Form)`
@@ -267,6 +268,12 @@ const SignUp = props => (
   />
 )
 
+injectGlobal`
+.fade-in {
+  opacity: 0;
+  transform: translateY(3px);
+}
+`
 class SignUpCard extends Component {
   state = {
     open: false,
@@ -275,19 +282,38 @@ class SignUpCard extends Component {
   handleResponse = (msg) => {
     this.setState({response: msg})
   }
+  componentDidMount () {
+    new TweenMax.staggerTo('.fade-in', 0.5, {
+      opacity: 1,
+      delay: .5,
+      y: 0
+    }, .15);
+    new TweenMax.staggerTo('.bridge', 2, {
+      ease: Quart.easeOut,
+      opacity: 1,
+      delay: .2,
+      y: 0,
+      x: 0
+    }, .15);
+    new TweenMax.staggerTo('.circle', 2, {
+      ease: Cubic.easeOut,
+      opacity: .44,
+      y: 0
+    }, .15);
+  }
   render() {
     return (
       <ThemeProvider theme={this.props.theme}>
-        <Card>
+        <Card className="card-in">
           <div>
-            <CardSubtitle>INTERNS 2018</CardSubtitle>
-            <CardTitle>{this.props.theme.city}</CardTitle>
+            <CardSubtitle className="fade-in">INTERNS 2018</CardSubtitle>
+            <CardTitle className="fade-in">{this.props.theme.city}</CardTitle>
           </div>
           {!this.state.open ? (
             <div>
               <Cover />
-              <Moon />
-              <Landmark landmark={this.props.theme.landmark} />
+              <Moon className="circle"/>
+              <Landmark className="bridge" landmark={this.props.theme.landmark} />
             </div>
           ) : 
           this.state.response === 'ok' ? (
@@ -307,6 +333,7 @@ class SignUpCard extends Component {
           )}
           {!this.state.open && (
             <ArrowButton
+              className="fade-in"
               style={{alignSelf: 'flex-end'}}
               onClick={() => this.state.open || this.setState({ open: true })}
             >
