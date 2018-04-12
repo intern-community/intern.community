@@ -6,6 +6,7 @@ import media from '../utils/media'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Favicon from '../assets/favicon.png'
 import '../assets/fonts.css'
 
 const Container = styled.div`
@@ -50,7 +51,16 @@ class Layout extends React.Component {
         meta={[
           { name: 'description', 
             content: 'Your one-stop guide for the best summer internship experience! We’re a community of designers, developers, product managers, data engineers, digital marketers—interns.' },
-          { name: 'keywords', content: 'interns community, community of interns, intern community in sf, intern community in seattle, intern community in seattle, tech intern community, 2018 intern slack, 2018 tech intern slack' },
+          { name: 'keywords', 
+            content: 'interns community, community of interns, intern community in sf, intern community in seattle, intern community in seattle, tech intern community, 2018 intern slack, 2018 tech intern slack' },
+        ]}
+        link={[
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16',
+            href: Favicon
+          }
         ]}
       />
       { !isLanding && (
