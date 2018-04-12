@@ -8,12 +8,8 @@ import seaneedle from '../assets/seaneedle.svg'
 import faq from '../assets/faq.svg'
 import logo from '../assets/logo.svg'
 import media from '../utils/media'
-import { StyledLink, StyledButton, ArrowButton } from '../components/Links'
-
-const TextHero = styled.div`
-  text-align: ${props => props.centered && 'center'};
-  padding: 3rem 0 1rem;
-`
+import { StyledAnchor, StyledLink, StyledButton, ArrowButton } from '../components/Links'
+import TextHero from '../components/TextHero'
 
 const SignUpContainer = styled.div`
   display: flex;
@@ -139,32 +135,36 @@ const IndexPage = ({ transition }) => (
       <h2>Say what?</h2>
     </TextHero>
     <Faq>
-      <h3>whoa whoa whoa, hold on, what is this?</h3>
+      <h3>what is intern.community?</h3>
       <FaqArrow />
       <p>
-        intern.community is a Separated they live in Bookmarksgrove right at the
-        coast of the Semantics, a large language ocean. A small river named
-        Duden flows by their place and supplies it with the necessary
-        regelialia.
+        intern.community is a space for interns by interns. Being an intern in a
+        new city can be a really cool experience and we want to make it super
+        easy for you to meet new people and have an amazing time. Hence, we have
+        created slack groups in the major cities, and will be holding events,
+        meetups, and Q&As where you can meet other interns as well.
       </p>
-      <h3>how might this improve my intern experience?</h3>
+      <h3>how will this improve my internship experience?</h3>
       <FaqArrow />
       <p>
-        A large language ocean. A small river named Duden flows by their place
-        and supplies it with the necessary regelialia.
+        You get to meet amazing people who, like you, might be in a new city.
+        You can leave work and still be able to enjoy yourself by checking out a
+        new neighborhood or a new bar with erstwhile strangers. All in all, our
+        hope is that more interns take the time to enjoy themselves outside of
+        work and make some friends along the way.
       </p>
-      <h3>who’s in the community?</h3>
+      <h3>who started this?</h3>
       <FaqArrow />
       <p>
-        A small river named Duden flows by their place and supplies it with the
-        necessary regelialia. A small river named Duden flows.
+        intern.community started by way of the annual bay area intern slack
+        group. We expanded on that this year by launching intern.community in
+        three cities to allow interns to meet other interns around them and do
+        stuff outside of work.
       </p>
-      <h3>i'm not convinced.</h3>
+      <h3>how can i contact you?</h3>
       <FaqArrow />
       <p>
-        We compiled a small bit of experiences from past community members for
-        you right <StyledLink to="/">here</StyledLink>! We’d love to give you
-        this same experience.
+        You can DM <strong>@greg</strong> or <strong>@anant</strong> in the slack channel, or email <StyledAnchor href="mailto:gregwwolff@gmail.com">gregwwolff@gmail.com</StyledAnchor>
       </p>
     </Faq>
   </div>
