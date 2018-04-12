@@ -5,6 +5,7 @@ import styled, { injectGlobal } from 'styled-components'
 import media from '../utils/media'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import '../assets/fonts.css'
 
 const Container = styled.div`
@@ -62,6 +63,7 @@ class Layout extends React.Component {
       <Wrapper>
         {this.props.children()}
       </Wrapper>
+      <Footer />
     </Container>
     );
   }
