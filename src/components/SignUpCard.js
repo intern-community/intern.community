@@ -332,6 +332,9 @@ class SignUpCard extends Component {
           this.state.response === 'existing' ? (
             <FormResponse><strong>You've already been invited! 🕶</strong><br/>Visit <StyledAnchor href={'https://'+this.props.theme.url}>{this.props.theme.url}</StyledAnchor> to get your account set up!</FormResponse>
           ) : 
+          this.state.response === 'failed: invite_limit_reached' ? (
+            <FormResponse><strong>Success! 💯</strong><br/>Click <StyledAnchor href="https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzIxNDgxNDQ4MzA5LWFhNzU5YjA2MjllN2ZlMzQyOTZlODljMTA4YmFlMzM2NDg1ODBjMDRhNzkwM2ZlNGUwNDFmNjkzYjQxODY3YjI">here</StyledAnchor> to join Slack.</FormResponse>
+          ) : 
           this.state.response ? (
             <FormResponse>{this.state.response}</FormResponse>
           ) :
