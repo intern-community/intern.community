@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import media from '../utils/media'
+
 const Wrapper = styled.div`
   margin-top: 7em;
   padding: 30px 70px;
@@ -16,6 +18,12 @@ const Wrapper = styled.div`
   a {
     color: #888;
   }
+  ${media.phone`
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 7%;
+  `}
 `
 
 const Footer = () => {

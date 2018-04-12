@@ -269,10 +269,20 @@ const SignUp = props => (
 )
 
 injectGlobal`
-.fade-in {
-  opacity: 0;
-  transform: translateY(3px);
-}
+  .fade-in {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  .fade-anim-enter {
+    opacity: 0.01;
+    transform: translateY(-2px);
+  }
+
+  .fade-anim-enter.fade-anim-enter-active {
+    opacity: 1;
+    transition: all 200ms ease-in;
+    transform: translateY(0px);
+  }
 `
 class SignUpCard extends Component {
   state = {
@@ -325,11 +335,12 @@ class SignUpCard extends Component {
           this.state.response ? (
             <FormResponse>{this.state.response}</FormResponse>
           ) :
-          ( <SignUp
-              city={this.props.theme.city}
-              id={this.props.theme.id}
-              formResponse={this.handleResponse}
-            />
+          (
+              <SignUp
+                city={this.props.theme.city}
+                id={this.props.theme.id}
+                formResponse={this.handleResponse}
+              />
           )}
           {!this.state.open && (
             <ArrowButton

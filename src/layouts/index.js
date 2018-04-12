@@ -25,7 +25,7 @@ const Wrapper = styled.main`
   max-width: 1000px;
   ${media.desktop`
     margin: 0 auto;
-    max-width: 680px;
+    max-width: 690px;
   `};
   ${media.tablet`
     max-width: 85%;

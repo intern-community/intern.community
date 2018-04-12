@@ -8,7 +8,12 @@ import seaneedle from '../assets/seaneedle.svg'
 import faq from '../assets/faq.svg'
 import logo from '../assets/logo.svg'
 import media from '../utils/media'
-import { StyledAnchor, StyledLink, StyledButton, ArrowButton } from '../components/Links'
+import {
+  StyledAnchor,
+  StyledLink,
+  StyledButton,
+  ArrowButton,
+} from '../components/Links'
 import TextHero from '../components/TextHero'
 
 const SignUpContainer = styled.div`
@@ -92,13 +97,14 @@ const IndexPage = ({ transition }) => (
   <div style={transition && transition.style}>
     <TextHero centered>
       <LogoWrap>
-        <Logo />Intern Community
+        <Logo />Intern.Community
       </LogoWrap>
       <p>
         We’re a community of designers, developers, product managers, data
-        engineers, digital marketers—interns. We hold monthly Q&A’s throughout
-        the summer, and help to provide any resources needed to be your one-stop
-        guide for the best summer internship experience!
+        engineers, digital marketers—interns. We want to provide a space for the
+        thousands of students interning over the summer, and help provide any
+        resources needed to become your one-stop guide to an awesome summer
+        experience!
       </p>
     </TextHero>
     <SignUpContainer>
@@ -164,7 +170,12 @@ const IndexPage = ({ transition }) => (
       <h3>how can i contact you?</h3>
       <FaqArrow />
       <p>
-        You can DM <strong>@greg</strong> or <strong>@anant</strong> in the slack channel, or email <StyledAnchor href="mailto:gregwwolff@gmail.com">gregwwolff@gmail.com</StyledAnchor>
+        You can DM <strong>@greg</strong> or <strong>@anant</strong> in the
+        slack channel, or email{' '}
+        <StyledAnchor href="mailto:gregwwolff@gmail.com">
+          gregwwolff@gmail.com
+        </StyledAnchor>{' '}
+        We recommend recruiters reach out to one of the admins.
       </p>
     </Faq>
   </div>
