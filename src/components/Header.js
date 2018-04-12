@@ -4,19 +4,7 @@ import Link from 'gatsby-link'
 const Header = (props) => {
   const {isSF, isSEA, isNYC} = props; 
   return (
-    <div
-      style={{
-        background: 'rebeccapurple',
-        marginBottom: '1.45rem',
-      }}
-    >
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '1.45rem 1.0875rem',
-        }}
-      >
+    <div>
         <h1 style={{ margin: 0 }}>
           <Link
             to={
@@ -36,7 +24,6 @@ const Header = (props) => {
             }
           </Link>
         </h1>
-      </div>
     </div>
   );
 }
