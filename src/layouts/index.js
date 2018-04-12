@@ -7,6 +7,7 @@ import media from '../utils/media'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Favicon from '../assets/favicon.png'
+import OgImage from '../assets/ogimage.png'
 import '../assets/fonts.css'
 
 const Container = styled.div`
@@ -53,6 +54,11 @@ class Layout extends React.Component {
             content: 'Your one-stop guide for the best summer internship experience! We’re a community of designers, developers, product managers, data engineers, digital marketers—interns.' },
           { name: 'keywords', 
             content: 'interns community, community of interns, intern community in sf, intern community in seattle, intern community in seattle, tech intern community, 2018 intern slack, 2018 tech intern slack' },
+          { property: 'og:title', content: 'intern.community' },
+          { property: 'og:description', content: 'intern.community is a space for interns by interns. We want our summers to be about more than just work. It should be about exploring new cities, making new friends and having a good old time.' },
+          { property: 'og:type', content: 'website' },
+          { property: 'og:image', content: OgImage },
+          { property: 'og:url', content: 'https://intern.community/' },
         ]}
         link={[
           {
