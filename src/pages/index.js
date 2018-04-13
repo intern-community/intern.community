@@ -100,11 +100,12 @@ const IndexPage = ({ transition }) => (
         <Logo />Intern.Community
       </LogoWrap>
       <p>
-        We’re a community of designers, developers, product managers, data
-        engineers, digital marketers—interns. We want to provide a space for the
-        thousands of students interning over the summer, and help provide any
-        resources needed to become your one-stop guide to an awesome summer
-        experience!
+        We’re a group of designers, developers, product managers, data
+        engineers, digital marketers—interns. We nourish a growing Slack
+        community, and will be hosting events, meetups, and Q&As throughout the
+        summer. We want to provide a community for the thousands of students
+        interning over the summer, and become your one-stop guide to an awesome
+        summer experience!
       </p>
     </TextHero>
     <SignUpContainer>
