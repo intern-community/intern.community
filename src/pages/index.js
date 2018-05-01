@@ -148,7 +148,7 @@ const IndexPage = ({ transition }) => (
         intern.community is a space for interns by interns. Being an intern in a
         new city can be a really cool experience and we want to make it super
         easy for you to meet new people and have an amazing time. Hence, we have
-        created slack groups in the major cities, and will be holding events,
+        created Slack groups in the major cities, and will be holding events,
         meetups, and Q&As where you can meet other interns as well.
       </p>
       <h3>how will this improve my internship experience?</h3>
@@ -163,7 +163,7 @@ const IndexPage = ({ transition }) => (
       <h3>who started this?</h3>
       <FaqArrow />
       <p>
-        intern.community started by way of the annual bay area intern slack
+        intern.community started by way of the annual bay area intern Slack
         group. We expanded on that this year by launching intern.community in
         three cities to allow interns to meet other interns around them and do
         stuff outside of work.
@@ -172,7 +172,7 @@ const IndexPage = ({ transition }) => (
       <FaqArrow />
       <p>
         You can DM <strong>@greg</strong> or <strong>@anant</strong> in the
-        slack channel, or email{' '}
+        Slack channel, or email{' '}
         <StyledAnchor href="mailto:gregwwolff@gmail.com">
           gregwwolff@gmail.com
         </StyledAnchor>{' '}
