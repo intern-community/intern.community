@@ -6,9 +6,10 @@ import { Formik, Form, Field } from 'formik'
 import Yup from 'yup'
 import axios from 'axios'
 import 'gsap/TweenMax'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 
-import { StyledAnchor, StyledLink, ArrowLink, ArrowButton } from './Links'
+import { StyledAnchor, StyledLink, ArrowLink, ArrowButton, CtaButton } from './Links'
 import media from '../utils/media'
 
 const Card = styled.div`
@@ -155,15 +156,14 @@ const Loader = styled.div`
   justify-content: center;
   width: 30px;
   height: 30px;
-  margin-right: 5px;
   &:after {
     content: " ";
     display: block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 3px solid ${props => desaturate(.5, props.theme.main)};
-    border-color: ${props => desaturate(.5, props.theme.main) + ' transparent ' + desaturate(.5, props.theme.main) + ' ' + desaturate(.5, props.theme.main)};
+    border: 3px solid ${props => props.theme.main};
+    border-color: ${props => props.theme.main + ' transparent ' + props.theme.main + ' ' + props.theme.main};
     animation: ${
       keyframes`
         from {
@@ -184,14 +184,13 @@ const SignUp = props => (
       company: '',
       school: '',
     }}
-    validationSchema={Yup.object().shape({
-      name: Yup.string().required('Name is required'),
-      email: Yup.string()
-        .email("Email isn't valid")
-        .required('Email is required'),
-      company: Yup.string(),
-      school: Yup.string(),
-    })}
+    validate={values => {
+      let errors = {};
+      if (!values.email) errors.email = 'Email is required';
+      else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.edu$/i.test(values.email)) errors.email = 'Email must be .edu address'
+      if (!values.name) errors.name = 'Name is required';
+      return errors;
+    }}
     onSubmit={values => {
       axios.post("https://intern-community-invite.herokuapp.com/invite", {
         id: props.id,
@@ -200,7 +199,6 @@ const SignUp = props => (
         company: values.company,
         school: values.school
       }).then(response => {
-        console.log(response.data)
         props.formResponse(response.data);
         //navigateTo({pathname: "/"+props.id, state: { context: response.data } })
       })
@@ -212,7 +210,6 @@ const SignUp = props => (
         </SignUpLabel>
         <SignUpInputContainer>
           <SignUpInput
-            // type="text"
             name="name"
             placeholder="Jane Doe"
             data-submitting={isSubmitting}
@@ -221,7 +218,7 @@ const SignUp = props => (
             errors.name && <SignUpError>{errors.name}</SignUpError>}
         </SignUpInputContainer>
         <SignUpLabel for="email" submitting={isSubmitting}>
-          Your Email
+          Your school email
         </SignUpLabel>
         <SignUpInputContainer>
           <SignUpInput
@@ -238,7 +235,6 @@ const SignUp = props => (
         </SignUpLabel>
         <SignUpInputContainer>
           <SignUpInput
-            // type="text"
             name="company"
             placeholder="Google"
             data-submitting={isSubmitting}
@@ -251,7 +247,6 @@ const SignUp = props => (
         </SignUpLabel>
         <SignUpInputContainer>
           <SignUpInput
-            // type="text"
             name="school"
             placeholder="Harvard"
             data-submitting={isSubmitting}
@@ -259,9 +254,8 @@ const SignUp = props => (
           {touched.school &&
             errors.school && <SignUpError>{errors.school}</SignUpError>}
         </SignUpInputContainer>
-        <div style={{alignSelf: 'flex-end'}}>
-          {isSubmitting && <Loader />}
-          <ArrowButton disabled={isSubmitting}>Join the Community</ArrowButton>
+        <div>
+          <CtaButton style={(values.name && values.email) ? {opacity: 1} : {opacity:0}} disabled={isSubmitting}>{isSubmitting ? <Loader /> : 'Join'}</CtaButton>
         </div>
       </SignUpForm>
     )}
@@ -275,9 +269,8 @@ injectGlobal`
   }
   .fade-anim-enter {
     opacity: 0.01;
-    transform: translateY(-2px);
+    transform: translateY(4px);
   }
-
   .fade-anim-enter.fade-anim-enter-active {
     opacity: 1;
     transition: all 200ms ease-in;
@@ -312,6 +305,11 @@ class SignUpCard extends Component {
     }, .15);
   }
   render() {
+    const invite = (id) => ({
+      "sf": "https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzIxNDgxNDQ4MzA5LWFhNzU5YjA2MjllN2ZlMzQyOTZlODljMTA4YmFlMzM2NDg1ODBjMDRhNzkwM2ZlNGUwNDFmNjkzYjQxODY3YjI",
+      "nyc": "https://join.slack.com/t/nycinterns2018/shared_invite/enQtMzYwNzUwOTM1OTM3LWI3NzE0NWE0MmRkNWUzMzNkNTc3ODlkMmJmNjMzYzEwNDE2NDZhMTRlOTZhMGM5Y2VjMTc2YjgyMTE5NzcyZGE",
+      "sea": "https://join.slack.com/t/seattleinterns2018/shared_invite/enQtMzYxNDM1NDQ2Nzg5LWM3ZDdkMmVlODQyNDg2NWU1NTAyZjc3YTdjNmM2YjhmZTk5YzdiYWVhMDdiYjk2YWQ5MzRkZjliMzk3NWNiOTM"
+    })[id]
     return (
       <ThemeProvider theme={this.props.theme}>
         <Card className="card-in">
@@ -319,32 +317,40 @@ class SignUpCard extends Component {
             <CardSubtitle className="fade-in">INTERNS 2018</CardSubtitle>
             <CardTitle className="fade-in">{this.props.theme.city}</CardTitle>
           </div>
-          {!this.state.open ? (
-            <div>
-              <Cover />
-              <Moon className="circle"/>
-              <Landmark className="bridge" landmark={this.props.theme.landmark} />
-            </div>
-          ) : 
-          this.state.response === 'ok' ? (
-            <FormResponse><strong>Success! 💯</strong><br/>Check your email for the invite.</FormResponse>
-          ) : 
-          this.state.response === 'existing' ? (
-            <FormResponse><strong>You've already been invited! 🕶</strong><br/>Visit <StyledAnchor href={'https://'+this.props.theme.url}>{this.props.theme.url}</StyledAnchor> to get your account set up!</FormResponse>
-          ) : 
-          this.state.response === 'failed: invite_limit_reached' ? (
-            <FormResponse><strong>Success! 💯</strong><br/>Click <StyledAnchor href="https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzIxNDgxNDQ4MzA5LWFhNzU5YjA2MjllN2ZlMzQyOTZlODljMTA4YmFlMzM2NDg1ODBjMDRhNzkwM2ZlNGUwNDFmNjkzYjQxODY3YjI">here</StyledAnchor> to join Slack.</FormResponse>
-          ) : 
-          this.state.response ? (
-            <FormResponse>{this.state.response}</FormResponse>
-          ) :
-          (
-              <SignUp
-                city={this.props.theme.city}
-                id={this.props.theme.id}
-                formResponse={this.handleResponse}
-              />
-          )}
+          <div style={this.state.response ? {margin: '1rem 0 auto'}:{margin: '0'}}>
+          <TransitionGroup>
+            {!this.state.open ? (
+              <div>
+                <Cover />
+                <Moon className="circle"/>
+                <Landmark className="bridge" landmark={this.props.theme.landmark} />
+              </div>
+            ) : 
+            this.state.response === 'ok' ? (
+                <FormResponse><strong>Success! 💯</strong><br/>Check your email for the invite.</FormResponse>
+            ) : 
+            this.state.response === 'existing' ? (
+                <FormResponse><strong>You've already been invited! 🕶</strong><br/>Visit <StyledAnchor href={'https://'+this.props.theme.url}>{this.props.theme.url}</StyledAnchor> to get your account set up!</FormResponse>
+            ) : 
+            this.state.response === 'failed: invite_limit_reached' ? (
+                <FormResponse><strong>Success! 💯</strong><br/>Click <StyledAnchor href={invite(this.props.theme.id)}>here</StyledAnchor> to join Slack.</FormResponse>
+            ) : 
+            this.state.response ? (
+                <FormResponse>{this.state.response}</FormResponse>
+            ) :
+            (
+              <CSSTransition
+                classNames="fade-anim"
+                timeout={{ enter: 500, exit: 300 }}>
+                <SignUp
+                  city={this.props.theme.city}
+                  id={this.props.theme.id}
+                  formResponse={this.handleResponse}
+                />
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+          </div>
           {!this.state.open && (
             <ArrowButton
               className="fade-in"
