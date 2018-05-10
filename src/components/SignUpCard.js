@@ -224,7 +224,7 @@ const SignUp = props => (
           <SignUpInput
             type="email"
             name="email"
-            placeholder="you@example.com"
+            placeholder="you@example.edu"
             data-submitting={isSubmitting}
           />
           {touched.email &&
