@@ -236,7 +236,11 @@ const SignUp = props => (
         <SignUpInputContainer>
           <SignUpInput
             name="company"
-            placeholder="Google"
+            placeholder={(function(id){return{
+              "sf": "Google",
+              "nyc": "Goldman Sachs",
+              "sea": "Microsoft"
+            }[id]})(props.id)}
             data-submitting={isSubmitting}
           />
           {touched.company &&
@@ -248,7 +252,11 @@ const SignUp = props => (
         <SignUpInputContainer>
           <SignUpInput
             name="school"
-            placeholder="Harvard"
+            placeholder={(function(id){return{
+              "sf": "UCSF",
+              "nyc": "Cornell University",
+              "sea": "University of Washington"
+            }[id]})(props.id)}
             data-submitting={isSubmitting}
           />
           {touched.school &&
