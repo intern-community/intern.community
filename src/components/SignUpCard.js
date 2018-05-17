@@ -10,6 +10,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 
 import { StyledAnchor, StyledLink, ArrowLink, ArrowButton, CtaButton } from './Links'
+import Popover from './Popover'
 import media from '../utils/media'
 
 const Card = styled.div`
@@ -137,7 +138,7 @@ const SignUpError = styled.span`
   bottom: -3px;
   left: 0;
   &:before {
-    content: '→';
+    content: '→ ';
   }
 `
 
@@ -176,6 +177,7 @@ const Loader = styled.div`
   }
 `;
 
+
 const SignUp = props => (
   <Formik
     initialValues={{
@@ -187,7 +189,7 @@ const SignUp = props => (
     validate={values => {
       let errors = {};
       if (!values.email) errors.email = 'Email is required';
-      else if (!/^[A-Z0-9._%+-]+@(?:[A-Z0-9.-]+\.edu|itesm\.mx|(?:edu\.)?uwaterloo\.ca)$/i.test(values.email)) errors.email = 'Email must be .edu address'
+      else if (!/^[A-Z0-9._%+-]+@(?:[A-Z0-9.-]+\.edu|itesm\.mx|(?:edu\.)?uwaterloo\.ca)|sfu\.ca$/i.test(values.email)) errors.email = 'Email must be .edu address'
       if (!values.name) errors.name = 'Name is required';
       return errors;
     }}
@@ -228,7 +230,7 @@ const SignUp = props => (
             data-submitting={isSubmitting}
           />
           {touched.email &&
-            errors.email && <SignUpError>{errors.email}</SignUpError>}
+            errors.email && <SignUpError>{errors.email}{errors.email.match(/(\.edu)/) && <Popover body={(<span>Don't have a .edu email? <StyledAnchor href='http://m.me/grgwlff'>Message us!</StyledAnchor></span>)}/>}</SignUpError>}
         </SignUpInputContainer>
         <SignUpLabel for="company" submitting={isSubmitting}>
           Which company are you working at?
@@ -374,4 +376,4 @@ class SignUpCard extends Component {
   }
 }
 
-export default SignUpCard
+export default SignUpCard;
