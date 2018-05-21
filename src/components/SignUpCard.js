@@ -189,7 +189,7 @@ const SignUp = props => (
     validate={values => {
       let errors = {};
       if (!values.email) errors.email = 'Email is required';
-      else if (!/^[A-Z0-9._%+-]+@(?:[A-Z0-9.-]+\.edu|itesm\.mx|(?:edu\.)?uwaterloo\.ca)|sfu\.ca|mail\.mcgill\.ca|queensu\.ca$/i.test(values.email)) errors.email = 'Email must be .edu address'
+      else if (!/^[A-Z0-9._%+-]+@(?:[A-Z0-9.-]+(?:\.edu|\.ac\.uk))|itesm\.mx|(?:edu\.)?uwaterloo\.ca|sfu\.ca|(?:mail\.)mcgill\.ca|queensu\.ca|(?:my\.)?yorku\.ca|(?:mail\.)?utoronto\.ca|sheridanc\.on\.ca$/i.test(values.email)) errors.email = 'Email must be .edu address'
       if (!values.name) errors.name = 'Name is required';
       return errors;
     }}
