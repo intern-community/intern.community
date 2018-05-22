@@ -8,8 +8,7 @@ import axios from 'axios'
 import 'gsap/TweenMax'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-
-import { StyledAnchor, StyledLink, ArrowLink, ArrowButton, CtaButton } from './Links'
+import { StyledAnchor, StyledLink, ArrowLink, ArrowButton, CtaButton } from './links'
 import Popover from './Popover'
 import media from '../utils/media'
 

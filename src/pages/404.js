@@ -1,11 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import TextHero from '../components/TextHero'
-
-const Image = styled.img`
-  border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(58,71,80,.2);
-`
+import { TextHero, Image } from '../components'
 
 const NotFoundPage = ({ transition }) => (
   <div style={transition && transition.style}>

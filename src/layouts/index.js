@@ -4,10 +4,8 @@ import Helmet from 'react-helmet'
 import styled, { injectGlobal } from 'styled-components'
 import media from '../utils/media'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Favicon from '../assets/favicon.png'
-import OgImage from '../assets/ogimage.png'
+import { Header, Footer } from '../components'
+import { Favicon, OgImage} from '../assets'
 import '../assets/fonts.css'
 
 const Container = styled.div`
