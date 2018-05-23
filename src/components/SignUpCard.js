@@ -315,7 +315,7 @@ class SignUpCard extends Component {
   }
   render() {
     const invite = (id) => ({
-      "sf": "https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzIxNDgxNDQ4MzA5LWFhNzU5YjA2MjllN2ZlMzQyOTZlODljMTA4YmFlMzM2NDg1ODBjMDRhNzkwM2ZlNGUwNDFmNjkzYjQxODY3YjI",
+      "sf": "https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzY4MDQ1NzE0NjczLThmNWZjMzA1YzJmZjdjN2VlMmFkZDg1YTA3NjVhNjNkNWFiM2ZkMDY4NDEwZWRkZGIzMGM1MGIzNWFlMjVmNjE",
       "nyc": "https://join.slack.com/t/nycinterns2018/shared_invite/enQtMzYwNzUwOTM1OTM3LWI3NzE0NWE0MmRkNWUzMzNkNTc3ODlkMmJmNjMzYzEwNDE2NDZhMTRlOTZhMGM5Y2VjMTc2YjgyMTE5NzcyZGE",
       "sea": "https://join.slack.com/t/seattleinterns2018/shared_invite/enQtMzYxNDM1NDQ2Nzg5LWM3ZDdkMmVlODQyNDg2NWU1NTAyZjc3YTdjNmM2YjhmZTk5YzdiYWVhMDdiYjk2YWQ5MzRkZjliMzk3NWNiOTM"
     })[id]

@@ -40,7 +40,14 @@ injectGlobal`
   margin-bottom: 0;
   padding-top: 0 !important;
 }
+.recharts-legend-item {
+  margin-bottom: 0;
+}
+.recharts-legend-item-text {
+  font-size: 0.8em;
+}
 `
+const TooltipFormatter = value => `${value} interns`;
 
 const CollabPic = styled.img`
   width: 330px;
@@ -91,17 +98,15 @@ const SlackPage = ({ transition }) => (
         backgrounds, and by performing outreach on a wide range of disciplines,
         to grow the community beyond typical tech-focused communities.
       </p>
-    <p>
-    <PieChart width={690} height={250}>
-      <h2>Intern City</h2>
-      <Pie data={data} cx={340} cy={120} innerRadius={50} outerRadius={100}>
+    <PieChart width={450} height={250} margin={{ left: 0, top: 0, right: 0, bottom: 0 }}>
+      <Pie data={data} dataKey="value" cx={170} cy={120} innerRadius={50} outerRadius={100}>
         {data.map((entry, index) => (
-          <Cell fill={COLORS[index % COLORS.length]}>{entry}</Cell>
+          <Cell key={index} fill={COLORS[index % COLORS.length]}>{entry}</Cell>
         ))}
       </Pie>
-      <Tooltip />
+      <Tooltip formatter={TooltipFormatter}/>
+      <Legend height={240} align="right" unit="people" layout="vertical" iconType="circle" />
     </PieChart>
-    </p>
     <p>
       Towards the end of each summer, intern.community throws the biggest intern
       event—internpalooza. Uniting, supporting, and nourishing communication
@@ -110,6 +115,7 @@ const SlackPage = ({ transition }) => (
       ambitious class of young professionals.
     </p>
     </TextHero>
+
   </div>
 )
 

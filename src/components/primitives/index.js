@@ -13,7 +13,8 @@ export const Header = (props) => {
             to={
               isSF && '/sf' ||
               isSEA && '/seattle' ||
-              isNYC && '/nyc'
+              isNYC && '/nyc' ||
+              '/'
             }
             style={{
               color: 'white',
