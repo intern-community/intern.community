@@ -97,9 +97,10 @@ export const Logo = styled.div`
   background: no-repeat url(${LogoSvg});
   display: inline-block;
   vertical-align: middle;
-  width: 37px;
-  height: 50px;
-  ${props => props.size == "s" && `
+  width: ${props => (props.width || '37') + 'px'};
+  height: ${props => (props.height || '50') + 'px'};
+  background-size: ${props => props.width + 'px' || 'initial'};
+  ${props => props.icon && `
     background-size: 35%;
     width: 30px;
     background-size: 20px;

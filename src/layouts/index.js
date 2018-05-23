@@ -45,8 +45,8 @@ class Layout extends React.Component {
     return (
       <Container>
       <Helmet
-        defaultTitle="Intern Community"
-        titleTemplate="%s | Intern Community"
+        defaultTitle="intern.community"
+        titleTemplate="%s | intern.community"
         meta={[
           { name: 'description', 
             content: 'Your one-stop guide for the best summer internship experience! We’re a community of designers, developers, product managers, data engineers, digital marketers—interns.' },
