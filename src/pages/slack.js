@@ -14,6 +14,7 @@ import {
   YAxis,
 } from 'recharts'
 import Collab from '../assets/collab.svg'
+import { PlantGrow } from '../assets'
 
 import media from '../utils/media'
 import {
@@ -146,6 +147,11 @@ const BenefitsList = styled.ul`
   border-radius: 5px;
 `
 
+const Illustration = styled.img`
+  border-radius: 10px;
+  box-shadow: rgba(58, 71, 80, 0.1) 0px 5px 20px;
+`
+
 const SlackPage = ({ transition }) => (
   <div style={transition && transition.style}>
     <TextHero centered>
@@ -175,13 +181,14 @@ const SlackPage = ({ transition }) => (
         erstwhile strangers. All in all, our hope is that we can connect interns
         outside of work and beyond their initial companies.
       </p>
-      <p>some image/illustration here?</p>
       <p>
         We want to prepare interns for a meaningful career, to nourish a
         community that is intellectually transformative, and to challenge
         interns on making educated and ethically engaged connections across
         common tech disciplinary boundaries.
       </p>
+      <p><Illustration src={PlantGrow} /></p>
+
       <p>
         Towards the end of each summer, intern.community throws the biggest
         intern event in SF, recollecting the summer's experiences. The event
@@ -336,8 +343,8 @@ const SlackPage = ({ transition }) => (
         />
         <li>Crediting Slack as a principal sponsor</li>
         <li>
-          Inviting Slack's keynote speakers to our intern kickoff event and
-          internapalooza
+          Inviting Slack's keynote speakers to our intern kickoff and closing
+          events
         </li>
         <li>Adding Slack logo to website and monthly email newsletters</li>
         <li>

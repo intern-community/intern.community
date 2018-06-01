@@ -138,11 +138,12 @@ export const LogoWrap = styled.h1`
       content: "";
       background: #C1CAFF;
       height: 330px;
-      width: 720px;
+      width: 100%;
       border-radius: 18px;
       box-shadow: 0 5px 20px rgba(58,71,80,0.1);
     }
-  `} ${media.phone`
+  `}
+  ${media.phone`
     ${props =>
       props.bg &&
       `
@@ -150,17 +151,17 @@ export const LogoWrap = styled.h1`
       font-size: 1.4em;
       border-radius: 80px;
       width: 90%;
-      margin: 60px auto 120px;
+      margin: 45px auto 150px;
       background: white;  
       &:after {
         position: absolute;
-        left: 0;
-        top: 40px;
+        left: -200px;
+        top: 0;
         z-index: -1;
         content: "";
         background: #C1CAFF;
-        height: 250px
-        width: 100%;
+        height: 300px;
+        width: 300%;
         border-radius: 18px;
         box-shadow: 0 5px 20px rgba(58,71,80,0.1);
       }
