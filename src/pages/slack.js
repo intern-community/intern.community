@@ -188,7 +188,6 @@ const SlackPage = ({ transition }) => (
         common tech disciplinary boundaries.
       </p>
       <p><Illustration src={PlantGrow} /></p>
-
       <p>
         Towards the end of each summer, intern.community throws the biggest
         intern event in SF, recollecting the summer's experiences. The event

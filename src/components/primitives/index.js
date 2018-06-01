@@ -138,10 +138,18 @@ export const LogoWrap = styled.h1`
       content: "";
       background: #C1CAFF;
       height: 330px;
-      width: 100%;
+      width: 720px;
       border-radius: 18px;
       box-shadow: 0 5px 20px rgba(58,71,80,0.1);
     }
+    @media(min-width: 1690px) {
+        margin: 120px auto 180px
+        &:after {
+          width: 1000px;
+          height: 400px;
+        }
+      }
+
   `}
   ${media.phone`
     ${props =>
