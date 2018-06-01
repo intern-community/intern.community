@@ -154,6 +154,8 @@ export const LogoWrap = styled.h1`
       background: white;  
       &:after {
         position: absolute;
+        left: 0;
+        top: 40px;
         z-index: -1;
         content: "";
         background: #C1CAFF;
