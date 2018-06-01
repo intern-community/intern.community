@@ -4,45 +4,40 @@ import styled from 'styled-components'
 import media from '../../utils/media'
 import { LogoSvg } from '../../assets'
 
-export const Header = (props) => {
-  const {isSF, isSEA, isNYC} = props; 
+export const Header = props => {
+  const { isSF, isSEA, isNYC } = props
   return (
     <div>
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to={
-              isSF && '/sf' ||
-              isSEA && '/seattle' ||
-              isNYC && '/nyc' ||
-              '/'
-            }
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            { 
-              isSF && 'SF/Bay Area Interns 2018' ||
-              isSEA && 'Seattle Interns 2018' ||
-              isNYC && 'New York City Interns 2018'
-            }
-          </Link>
-        </h1>
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to={
+            (isSF && '/sf') || (isSEA && '/seattle') || (isNYC && '/nyc') || '/'
+          }
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          {(isSF && 'SF/Bay Area Interns 2018') ||
+            (isSEA && 'Seattle Interns 2018') ||
+            (isNYC && 'New York City Interns 2018')}
+        </Link>
+      </h1>
     </div>
-  );
+  )
 }
 
 const FooterWrap = styled.div`
   margin-top: 7em;
   padding: 30px 70px;
-  font-size: .75em;
+  font-size: 0.75em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   p {
     margin: 0;
     color: #888;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
   a {
     color: #888;
@@ -52,7 +47,7 @@ const FooterWrap = styled.div`
     text-align: center;
     flex-direction: column;
     padding: 30px 7%;
-  `}
+  `};
 `
 
 export const Footer = () => {
@@ -61,15 +56,20 @@ export const Footer = () => {
       <p>© 2018 Intern Community. All rights reserved.</p>
       <div>
         <p>Made with ♥ by interns</p>
-        <p>Having problems? <a href="https://m.me/grgwlff" target="_blank">Let us know!</a></p>
+        <p>
+          Having problems?{' '}
+          <a href="https://m.me/grgwlff" target="_blank">
+            Let us know!
+          </a>
+        </p>
       </div>
     </FooterWrap>
-  );
+  )
 }
 
 export const Image = styled.img`
   border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(58,71,80,.2);
+  box-shadow: 0 5px 20px rgba(58, 71, 80, 0.2);
 `
 
 export const TextHero = styled.div`
@@ -101,14 +101,15 @@ export const Logo = styled.div`
   width: ${props => (props.width || '37') + 'px'};
   height: ${props => (props.height || '50') + 'px'};
   background-size: ${props => props.width + 'px' || 'initial'};
-  ${props => props.icon && `
+  ${props =>
+    props.icon &&
+    `
     background-size: 35%;
     width: 30px;
     background-size: 20px;
     height: 28px;
     background-position: center;
-  `}
-  ${media.phone`
+  `} ${media.phone`
     transform: scale(0.9);
   `};
 `
@@ -123,7 +124,9 @@ export const LogoWrap = styled.h1`
       margin-right: 10px;
     `};
   }
-  ${props => props.bg && `
+  ${props =>
+    props.bg &&
+    `
     padding: 40px;
     border-radius: 80px;
     width: 510px;
@@ -134,12 +137,33 @@ export const LogoWrap = styled.h1`
       z-index: -1;
       content: "";
       background: #C1CAFF;
-      height: 300px;
-      width: 100%;
-      border-radius: 9px;
+      height: 330px;
+      width: 720px;
+      border-radius: 18px;
       box-shadow: 0 5px 20px rgba(58,71,80,0.1);
     }
-  `}
+  `} ${media.phone`
+    ${props =>
+      props.bg &&
+      `
+      padding: 20px;
+      font-size: 1.4em;
+      border-radius: 80px;
+      width: 90%;
+      margin: 60px auto 120px;
+      background: white;  
+      &:after {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        background: #C1CAFF;
+        height: 250px
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(58,71,80,0.1);
+      }
+    `}
+  `};
 `
 
 export const FaqArrow = styled.span`
