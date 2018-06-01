@@ -30,6 +30,7 @@ import {
   FaqArrow,
 } from '../components'
 
+const windowWidth = typeof window !== 'undefined' && window.innerWidth
 const COLORS = ['#f55353', '#6279F2', '#A762F2', '#F5A653', '#F5E153']
 let locations = [
   {
@@ -80,6 +81,9 @@ injectGlobal`
 .recharts-legend-item-text {
   font-size: 0.8em;
 }
+.recharts-label-list text {
+  stroke: none;
+}
 `
 const TooltipFormatter = value => `${value} interns`
 
@@ -99,7 +103,7 @@ const TwoCol = styled.div`
     flex-direction: ${props => (props.reverse ? `column-reverse` : `column`)};
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    padding: 50px 0;
+    padding: 50px;
     margin: 40px 0;
   `};
 `
@@ -130,13 +134,15 @@ const ColDetail = styled.div`
     text-align: center;
     padding: 0;
     margin: 0 0 30px 0;
+    width: initial;
   `};
 `
 
 const BenefitsList = styled.ul`
   text-align: left;
   padding: 50px 70px 35px;
-  border: 2px solid #eaeaea;
+  ${media.phone`padding: 50px 40px 25px;`} margin: 1.58rem;
+  ${media.phone`margin: 1.4rem 0.4rem;`} border: 2px solid #eaeaea;
   border-radius: 5px;
 `
 
@@ -178,11 +184,11 @@ const SlackPage = ({ transition }) => (
       </p>
       <p>
         Towards the end of each summer, intern.community throws the biggest
-        intern event in SF—internapalooza. The event serves to unite, support,
-        and stengthen communication and connections within our community. This
-        huge event opens opportunities for sponsorship recognition, allowing a
-        company's brand values to be pushed forward to an ambitious class of
-        young professionals.
+        intern event in SF, recollecting the summer's experiences. The event
+        serves to unite, support, and stengthen communication and connections
+        within our community. This event also opens opportunities for
+        sponsorship recognition, allowing a company's brand and values to be
+        pushed forward towards an ambitious class of young professionals.
       </p>
       <p>
         We facilitate interdisciplinary communication between interns by:
@@ -202,38 +208,39 @@ const SlackPage = ({ transition }) => (
         <div>
           <h5>Top Intern Universities</h5>
           <BarChart
-            width={370}
+            width={windowWidth > 839 ? 370 : 340}
             height={250}
             margin={{
-              left: window.innerWidth > 839 ? 40 : 0,
+              left: windowWidth > 839 ? 40 : -25,
               top: 0,
-              right: 0,
-              bottom: window.innerWidth > 839 ? 0 : 15,
+              right: 2,
+              bottom: windowWidth > 839 ? 0 : 15,
             }}
             data={schools}
-            layout={window.innerWidth > 839 ? 'vertical' : 'horizontal'}
+            style={windowWidth < 839 ? { transform: 'scale(0.9)' } : {}}
+            layout={windowWidth > 839 ? 'vertical' : 'horizontal'}
           >
             <XAxis
-              dataKey={window.innerWidth > 839 ? 'value' : 'name'}
-              type={window.innerWidth > 839 ? 'number' : 'category'}
+              dataKey={windowWidth > 839 ? 'value' : 'name'}
+              type={windowWidth > 839 ? 'number' : 'category'}
               tick={
-                window.innerWidth > 839
+                windowWidth > 839
                   ? { fontSize: 16, width: 60 }
                   : { fontSize: 12, width: 20 }
               }
-              interval={window.innerWidth > 839 ? 'preserveEnd' : 0}
+              interval={windowWidth > 839 ? 'preserveEnd' : 0}
             />
             <YAxis
-              dataKey={window.innerWidth > 839 ? 'name' : 'value'}
-              type={window.innerWidth > 839 ? 'category' : 'number'}
+              dataKey={windowWidth > 839 ? 'name' : 'value'}
+              type={windowWidth > 839 ? 'category' : 'number'}
               tick={
-                window.innerWidth > 839
+                windowWidth > 839
                   ? { fontSize: 12, width: 170 }
                   : { fontSize: 16, width: 60 }
               }
             />
             <Bar dataKey="value">
-              {window.innerWidth < 839 && (
+              {windowWidth < 839 && (
                 <LabelList
                   dataKey="value"
                   fill="#f9f9f9"
@@ -259,9 +266,14 @@ const SlackPage = ({ transition }) => (
       </p>
       <TwoCol reverse>
         <PieChart
-          width={370}
+          width={windowWidth > 839 ? 370 : 340}
           height={250}
-          margin={{ left: 0, top: 0, right: 0, bottom: 0 }}
+          margin={{
+            left: windowWidth > 839 ? 0 : 20,
+            top: 0,
+            right: 0,
+            bottom: 0,
+          }}
         >
           <Pie
             data={locations}
@@ -271,7 +283,7 @@ const SlackPage = ({ transition }) => (
             innerRadius={50}
             outerRadius={100}
           >
-            {window.innerWidth < 839 && (
+            {windowWidth < 839 && (
               <LabelList
                 dataKey="value"
                 fill="#f9f9f9"
@@ -313,8 +325,8 @@ const SlackPage = ({ transition }) => (
 
       <CollabPic src={Collab} />
       <p>
-        We want to provide Slack with various
-        benefits from our intern community:
+        We want to provide Slack with various benefits from our intern
+        community:
       </p>
       <BenefitsList>
         <CollabPic
@@ -342,11 +354,12 @@ const SlackPage = ({ transition }) => (
         </li>
       </BenefitsList>
       <p>
-      Our community is growing. Each Slack organization has surpassed its free limits and
-        are closing in on 40K messages. We are asking for the Standard plan across our three cities for the
-        months of June, July, August and September so that our communities can
-        continue growing. After September, we're open to reviewing the
-        partnership, and how it might benefit Slack further.
+        Our community is growing. Each Slack organization has surpassed its free
+        limits and are closing in on 40K messages. We are asking for the
+        Standard plan across our three cities for the months of June, July,
+        August and September so that our communities can continue growing. After
+        September, we're open to reviewing the partnership, and how it might
+        benefit Slack further.
       </p>
       <p>
         Communities are about belonging. We're building ours on trust, respect,
