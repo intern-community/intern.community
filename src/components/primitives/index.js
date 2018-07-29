@@ -141,6 +141,8 @@ export const LogoWrap = styled.h1`
       width: 720px;
       border-radius: 18px;
       box-shadow: 0 5px 20px rgba(58,71,80,0.1);
+      left: -15px;
+      top: 47px;
     }
     @media(min-width: 1690px) {
         margin: 120px auto 180px
