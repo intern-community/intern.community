@@ -18,9 +18,9 @@ export const Header = props => {
             textDecoration: 'none',
           }}
         >
-          {(isSF && 'SF/Bay Area Interns 2018') ||
-            (isSEA && 'Seattle Interns 2018') ||
-            (isNYC && 'New York City Interns 2018')}
+          {(isSF && 'SF/Bay Area Interns 2019') ||
+            (isSEA && 'Seattle Interns 2019') ||
+            (isNYC && 'New York City Interns 2019')}
         </Link>
       </h1>
     </div>
@@ -53,7 +53,7 @@ const FooterWrap = styled.div`
 export const Footer = () => {
   return (
     <FooterWrap>
-      <p>© 2018 Intern Community. All rights reserved.</p>
+      <p>© 2019 Intern Community. All rights reserved.</p>
       <div>
         <p>Made with ♥ by interns</p>
         <p>
