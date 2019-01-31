@@ -7,7 +7,8 @@ import {
   LogoWrap,
   Faq,
   FaqArrow,
-  Image
+  Image,
+  Main
 } from './primitives'
 import {
   StyledLink,
@@ -29,6 +30,7 @@ export default {
   LogoWrap,
   Faq,
   FaqArrow,
+  Main,
   Image,
   StyledLink,
   StyledButton,

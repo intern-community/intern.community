@@ -29,6 +29,7 @@ import {
   LogoWrap,
   Faq,
   FaqArrow,
+  Main
 } from '../components'
 
 const windowWidth = typeof window !== 'undefined' && window.innerWidth
@@ -153,7 +154,7 @@ const Illustration = styled.img`
 `
 
 const SlackPage = ({ transition }) => (
-  <div style={transition && transition.style}>
+  <Main style={transition && transition.style}>
     <TextHero centered>
       <LogoWrap bg>
         <Logo />intern.community
@@ -375,7 +376,7 @@ const SlackPage = ({ transition }) => (
         prosperous community of interns.
       </p>
     </TextHero>
-  </div>
+  </Main>
 )
 
 export default SlackPage

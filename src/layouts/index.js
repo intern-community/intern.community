@@ -32,7 +32,6 @@ const Wrapper = styled.main`
   ${media.phone`
     max-width: 90%;
   `};
-
 `;
 
 class Layout extends React.Component {

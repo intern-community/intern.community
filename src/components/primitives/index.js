@@ -72,6 +72,10 @@ export const Image = styled.img`
   box-shadow: 0 5px 20px rgba(58, 71, 80, 0.2);
 `
 
+export const Main = styled.div`
+  opacity: 0;
+`
+
 export const TextHero = styled.div`
   text-align: ${props => props.centered && 'center'};
   padding: 3rem 0 1rem;
