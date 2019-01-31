@@ -102,7 +102,7 @@ const IndexPage = ({ transition }) => (
       <h3>how can i contact you?</h3>
       <FaqArrow />
       <p>
-        You can DM <strong>@greg</strong> or <strong>@anant</strong> in the
+        You can DM <strong>@greg</strong> in the
         Slack channel, or email{' '}
         <StyledAnchor href="mailto:gregwwolff@gmail.com">
           gregwwolff@gmail.com
