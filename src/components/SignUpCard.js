@@ -315,15 +315,15 @@ class SignUpCard extends Component {
   }
   render() {
     const invite = (id) => ({
-      "sf": "https://join.slack.com/t/sfbayinterns2018/shared_invite/enQtMzY4MDQ1NzE0NjczLThmNWZjMzA1YzJmZjdjN2VlMmFkZDg1YTA3NjVhNjNkNWFiM2ZkMDY4NDEwZWRkZGIzMGM1MGIzNWFlMjVmNjE",
-      "nyc": "https://join.slack.com/t/nycinterns2018/shared_invite/enQtMzYwNzUwOTM1OTM3LWI3NzE0NWE0MmRkNWUzMzNkNTc3ODlkMmJmNjMzYzEwNDE2NDZhMTRlOTZhMGM5Y2VjMTc2YjgyMTE5NzcyZGE",
-      "sea": "https://join.slack.com/t/seattleinterns2018/shared_invite/enQtMzYxNDM1NDQ2Nzg5LWM3ZDdkMmVlODQyNDg2NWU1NTAyZjc3YTdjNmM2YjhmZTk5YzdiYWVhMDdiYjk2YWQ5MzRkZjliMzk3NWNiOTM"
+      "sf": "",
+      "nyc": "",
+      "sea": ""
     })[id]
     return (
       <ThemeProvider theme={this.props.theme}>
         <Card className="card-in">
           <div>
-            <CardSubtitle className="fade-in">INTERNS 2018</CardSubtitle>
+            <CardSubtitle className="fade-in">INTERNS 2019</CardSubtitle>
             <CardTitle className="fade-in">{this.props.theme.city}</CardTitle>
           </div>
           <div style={this.state.response ? {margin: '1rem 0 auto'}:{margin: '0'}}>
@@ -342,8 +342,9 @@ class SignUpCard extends Component {
                 <FormResponse><strong>You've already been invited! 🕶</strong><br/>Visit <StyledAnchor href={'https://'+this.props.theme.url}>{this.props.theme.url}</StyledAnchor> to get your account set up!</FormResponse>
             ) : 
             this.state.response === 'failed: invite_limit_reached' ? (
-                <FormResponse><strong>Success! 💯</strong><br/>Click <StyledAnchor href={invite(this.props.theme.id)}>here</StyledAnchor> to join Slack.</FormResponse>
-            ) : 
+                // <FormResponse><strong>Success! 💯</strong><br/>Click <StyledAnchor href={invite(this.props.theme.id)}>here</StyledAnchor> to join Slack.</FormResponse>
+                <FormResponse><strong>Uh oh! Something went wrong...</strong><br/>Message me at <StyledAnchor href="https://m.me/grgwlff">@grgwlff</StyledAnchor> to let me know something is broken.</FormResponse>
+              ) : 
             this.state.response ? (
                 <FormResponse>{this.state.response}</FormResponse>
             ) :

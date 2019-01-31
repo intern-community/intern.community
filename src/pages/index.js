@@ -20,11 +20,12 @@ import {
   Logo,
   LogoWrap,
   Faq,
-  FaqArrow
+  FaqArrow,
+  Main
 } from '../components'
 
 const IndexPage = ({ transition }) => (
-  <div style={transition && transition.style}>
+  <Main style={transition && transition.style}>
     <TextHero centered>
       <LogoWrap>
         <Logo />intern.community
@@ -45,7 +46,7 @@ const IndexPage = ({ transition }) => (
           landmark: SfMonument,
           city: 'SF/Bay Area',
           id: 'sf',
-          url: 'sfbayinterns2018.slack.com',
+          url: 'sfbayinterns2019.slack.com',
         }}
       />
       <SignUpCard
@@ -54,7 +55,7 @@ const IndexPage = ({ transition }) => (
           landmark: NycMonument,
           city: 'New York City',
           id: 'nyc',
-          url: 'nycinterns2018.slack.com',
+          url: 'nycinterns2019.slack.com',
         }}
       />
       <SignUpCard
@@ -63,7 +64,7 @@ const IndexPage = ({ transition }) => (
           landmark: SeaMonument,
           city: 'Seattle',
           id: 'sea',
-          url: 'seattleinterns2018.slack.com',
+          url: 'seattleinterns2019.slack.com',
         }}
       />
     </SignUpContainer>
@@ -109,7 +110,7 @@ const IndexPage = ({ transition }) => (
         We recommend recruiters reach out to one of the admins.
       </p>
     </Faq>
-  </div>
+  </Main>
 )
 
 export default IndexPage
