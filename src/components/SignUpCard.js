@@ -3,12 +3,11 @@ import Link, { navigateTo } from 'gatsby-link'
 import styled, { injectGlobal, ThemeProvider, keyframes, css } from 'styled-components'
 import { lighten, darken, desaturate, transparentize } from 'polished'
 import { Formik, Form, Field } from 'formik'
-import Yup from 'yup'
 import axios from 'axios'
 import 'gsap/TweenMax'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-import { StyledAnchor, StyledLink, ArrowLink, ArrowButton, CtaButton } from './links'
+import { StyledAnchor, ArrowButton, CtaButton } from './links'
 import Popover from './Popover'
 import media from '../utils/media'
 
@@ -201,6 +200,7 @@ const SignUp = props => (
         school: values.school
       }).then(response => {
         props.formResponse(response.data);
+        window.ga(`send`, `event`, `${props.id} signup`, `clicked`, `User joined ${props.id}`);
         //navigateTo({pathname: "/"+props.id, state: { context: response.data } })
       })
     }}
