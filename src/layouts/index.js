@@ -5,7 +5,7 @@ import styled, { injectGlobal } from 'styled-components'
 import media from '../utils/media'
 
 import { Header, Footer } from '../components'
-import { Favicon, OgImage} from '../assets'
+import { Favicon, OgImage } from '../assets'
 import '../assets/fonts.css'
 
 const Container = styled.div`
