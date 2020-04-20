@@ -4,10 +4,11 @@ import styled from 'styled-components'
 
 import media from '../utils/media'
 import { 
-  SfMonument,
-  NycMonument,
-  SeaMonument,
-  FaqIcon
+  // SfMonument,
+  // NycMonument,
+  // SeaMonument,
+  ICLandmark,
+  FaqIcon,
 } from '../assets'
 import {
   StyledAnchor,
@@ -40,7 +41,16 @@ const IndexPage = ({ transition }) => (
       </p>
     </TextHero>
     <SignUpContainer>
-      <SignUpCard
+    <SignUpCard
+        theme={{
+          main: '#8669FC',
+          landmark: ICLandmark,
+          city: 'intern.community',
+          id: 'ic',
+          url: 'interncommunity2020.slack.com',
+        }}
+      />
+    {/* <SignUpCard
         theme={{
           main: '#f55353',
           landmark: SfMonument,
@@ -66,7 +76,7 @@ const IndexPage = ({ transition }) => (
           id: 'sea',
           url: 'seattleinterns2019.slack.com',
         }}
-      />
+      /> */}
     </SignUpContainer>
     <TextHero centered>
       <img src={FaqIcon} style={{ marginBottom: '0' }} />

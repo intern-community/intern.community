@@ -49,14 +49,16 @@ const Cover = styled.div`
   width: 100%;
   height: ${props => (props.theme.id === 'sf' && '19%') ||
               (props.theme.id === 'nyc' && '31%') ||
-              (props.theme.id === 'sea' && '31%')};
+              (props.theme.id === 'sea' && '31%') ||
+              (props.theme.id === 'ic' && '31%')};
   bottom: 0;
   left: 0;
   z-index: 2;
   background: linear-gradient(0, white,
     ${props => (props.theme.id === 'sf' && '91%') ||
               (props.theme.id === 'nyc' && '81%') ||
-              (props.theme.id === 'sea' && '79%')}, rgba(255, 255, 255, 0));
+              (props.theme.id === 'sea' && '79%') ||
+              (props.theme.id === 'ic' && '79%')}, rgba(255, 255, 255, 0));
   border-radius: 6px;
 `
 
@@ -79,13 +81,16 @@ const Landmark = styled.div`
   height: 100%;
   top:  ${props => (props.theme.id === 'sf' && '186px') ||
               (props.theme.id === 'nyc' && '128px') ||
-              (props.theme.id === 'sea' && '104px')};
+              (props.theme.id === 'sea' && '104px') ||
+              (props.theme.id === 'ic' && '135px')};
   left:  ${props => (props.theme.id === 'sf' && '0') ||
               (props.theme.id === 'nyc' && '120px') ||
-              (props.theme.id === 'sea' && '114px')};
+              (props.theme.id === 'sea' && '114px') ||
+              (props.theme.id === 'ic' && '80px')};
   transform: translate(10px, 50px);
   background: no-repeat url(${props => props.landmark});
   background-position-x: ${props => (props.theme.id === 'sf' && '-22px')};
+  background-size: ${props => (props.theme.id === 'ic' && '75%')};
 `
 
 const SignUpForm = styled(Form)`
@@ -200,7 +205,7 @@ const SignUp = props => (
         school: values.school
       }).then(response => {
         props.formResponse(response.data);
-        window.ga(`send`, `event`, `${props.id} signup`, `clicked`, `User joined ${props.id}`);
+        // window.ga(`send`, `event`, `${props.id} signup`, `clicked`, `User joined ${props.id}`);
         //navigateTo({pathname: "/"+props.id, state: { context: response.data } })
       })
     }}
@@ -240,7 +245,8 @@ const SignUp = props => (
             placeholder={(function(id){return{
               "sf": "Google",
               "nyc": "Goldman Sachs",
-              "sea": "Microsoft"
+              "sea": "Microsoft",
+              "ic": "Google"
             }[id]})(props.id)}
             data-submitting={isSubmitting}
           />
@@ -256,7 +262,8 @@ const SignUp = props => (
             placeholder={(function(id){return{
               "sf": "UCSF",
               "nyc": "Cornell University",
-              "sea": "University of Washington"
+              "sea": "University of Washington",
+              "ic": "Cornell University"
             }[id]})(props.id)}
             data-submitting={isSubmitting}
           />
@@ -317,13 +324,14 @@ class SignUpCard extends Component {
     const invite = (id) => ({
       "sf": "",
       "nyc": "",
-      "sea": ""
+      "sea": "",
+      "ic": "",
     })[id]
     return (
       <ThemeProvider theme={this.props.theme}>
         <Card className="card-in">
           <div>
-            <CardSubtitle className="fade-in">INTERNS 2019</CardSubtitle>
+            <CardSubtitle className="fade-in">REMOTE {(new Date()).getFullYear()}</CardSubtitle>
             <CardTitle className="fade-in">{this.props.theme.city}</CardTitle>
           </div>
           <div style={this.state.response ? {margin: '1rem 0 auto'}:{margin: '0'}}>
@@ -346,7 +354,7 @@ class SignUpCard extends Component {
                 <FormResponse><strong>Uh oh! Something went wrong...</strong><br/>Message me at <StyledAnchor href="https://m.me/grgwlff">@grgwlff</StyledAnchor> to let me know something is broken.</FormResponse>
               ) : 
             this.state.response ? (
-                <FormResponse>{this.state.response}</FormResponse>
+                <FormResponse>{this.state.response}<br />Message me at <StyledAnchor href="https://m.me/grgwlff">@grgwlff</StyledAnchor> to let me know something is broken.</FormResponse>
             ) :
             (
               <CSSTransition
