@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Greg Wolff <gregwwolff@gmail.com>",
   "dependencies": {
-    "airtable": "^0.5.10",
+    "airtable": "^0.7.2",
     "axios": "^0.18.1",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^5.0.1",
