@@ -15,7 +15,7 @@
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-plugin-typography": "^1.7.19",
-    "gsap": "^1.20.6",
+    "gsap": "^3.6.0",
     "polished": "^1.9.3",
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
